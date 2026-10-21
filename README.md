@@ -11,7 +11,7 @@ outcome is stored on-chain as a public **precedent registry per work**.
 
 | | |
 |---|---|
-| Live app | __LIVE_URL__ |
+| Live app | https://licensecheck-dikacreams-projects.vercel.app |
 | Contract (Studionet, chain 61999) | [`0x9e2885d91a1F9A426ceEd1580863840395CC109c`](https://explorer-studio.genlayer.com/address/0x9e2885d91a1F9A426ceEd1580863840395CC109c) |
 | Deploy tx | [`0x8da3bf24…5f46`](https://explorer-studio.genlayer.com/transactions/0x8da3bf24024a1dae372e263d0154ddd7d0213256ddacf24f9828c1e418de5f46) |
 | On-chain e2e results | [`deployments/RESULTS.md`](deployments/RESULTS.md) |

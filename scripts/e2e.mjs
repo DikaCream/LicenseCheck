@@ -14,7 +14,7 @@
 //   timeout       judging never happens before its deadline: judge reverts, expire voids and refunds the bond
 // Writes deployments/e2e-<scenario>.json.
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
-import { Run, read, now, sleep, PAGES, CLAIM_ATTR, CLAIM_NC, registerWork, fileReport } from "./e2e-lib.mjs";
+import { Run, read, now, sleep, PAGES, TITLE, CLAIM_ATTR, CLAIM_NC, registerWork, fileReport } from "./e2e-lib.mjs";
 
 const name = process.argv[2];
 const run = new Run(name);
@@ -70,12 +70,12 @@ if (name === "screens") {
   await fileReport(run, B, wid, PAGES.noCredit, "NO_DERIVATIVES", CLAIM_ATTR, { expectFail: true, label: "file_report on a term outside the license reverts" });
   await run.write("register the same original URL again (fragment variant) reverts", A, "register_work", ["Harbor Lights duplicate", `${PAGES.noCredit.replace(/reported\/.*/, "original/harbor-lights.txt")}?run=${tag}#stanza-2`, "CC-BY", []], { expectFail: true });
 } else if (name === "violation" || name === "compliant" || name === "noncommercial" || name === "inconclusive") {
-  const wid = await work(name === "inconclusive" ? { clauses: ["Any reuse must state the calendar date on which the poem was copied."] } : {});
+  const wid = await work();
   const cfg = {
     violation: [PAGES.noCredit, "ATTRIBUTION", CLAIM_ATTR, "VIOLATION"],
     compliant: [PAGES.withCredit, "ATTRIBUTION", "The reading club page reproduces the first stanza of Harbor Lights; I claim it does not credit Mira Okafor or link to the original.", "COMPLIANT"],
     noncommercial: [PAGES.poster, "NONCOMMERCIAL", CLAIM_NC, "VIOLATION"],
-    inconclusive: [PAGES.dateUnclear, "CUSTOM_1", "The moodboard page reproduces the first stanza of Harbor Lights but does not state the calendar date on which the poem was copied, as custom clause 1 requires; it only points to a photo that is not on the page.", "INCONCLUSIVE"],
+    inconclusive: [PAGES.illegible, "ATTRIBUTION", "The moodboard page reproduces the first stanza of Harbor Lights; its credit line is illegible, so it does not clearly name Mira Okafor or link to the original.", "INCONCLUSIVE"],
   }[name];
   const before = await bal(B);
   const id = await reportAndJudge(wid, cfg[0], cfg[1], cfg[2]);
@@ -95,7 +95,7 @@ if (name === "screens") {
   if (r.verdict === "VIOLATION") await fileReport(run, C, wid, cfg[0] + "#again", cfg[1], cfg[2], { expectFail: true, label: "re-report of a URL with a final VIOLATION precedent reverts" });
 } else if (name === "upheld" || name === "uncompleted" || name === "registered") {
   const wid = await work();
-  const id = await reportAndJudge(wid, PAGES.noCredit, "ATTRIBUTION", CLAIM_ATTR, { at: name === "upheld" ? 1800 : 60, aw: 300 });
+  const id = await reportAndJudge(wid, PAGES.noCredit, "ATTRIBUTION", CLAIM_ATTR, { at: name === "upheld" ? 1800 : name === "registered" ? 300 : 60, aw: 300 });
   let r = await rep(id);
   const first = r.verdict;
   const appellant = first === "VIOLATION" ? C : B;
@@ -112,7 +112,7 @@ if (name === "screens") {
     if (name === "registered") {
       await run.write("register_appeal_attempt", appellant, "register_appeal_attempt", [id]);
       r = await rep(id);
-      run.check("attempt recorded on-chain and 600 s grace added", r.appeal_attempts === 1 && r.appeal_due === r.appealed_at + 60 + 600, { attempts: r.appeal_attempts, due: r.appeal_due });
+      run.check("attempt recorded on-chain and 600 s grace added", r.appeal_attempts === 1 && r.appeal_due === r.appealed_at + 300 + 600, { attempts: r.appeal_attempts, due: r.appeal_due });
     }
     r = await rep(id);
     await waitUntil(r.appeal_due);
@@ -133,8 +133,12 @@ if (name === "screens") {
     [id, "The zine page says credits are printed on a separate credits page; that credits page names Mira Okafor and links to the original.", PAGES.credits + "#issue-12"]);
   r = await rep(id);
   run.check("appeal exhibit stored canonically (fragment stripped) and snapshotted", r.appeal_evidence === PAGES.credits, r.appeal_evidence);
-  await run.write("rule_appeal", A, "rule_appeal", [id]);
-  r = await rep(id);
+  // A round whose validators cannot agree (UNDETERMINED) changes nothing on-chain; it can be retried before the deadline.
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    await run.write(`rule_appeal (attempt ${attempt})`, A, "rule_appeal", [id]);
+    r = await rep(id);
+    if (r.status !== "APPEALED") break;
+  }
   const rounds = await read("get_rounds", [id]);
   run.check("appeal exhibit reached round two", rounds[1]?.sources?.includes(PAGES.credits), rounds[1]?.sources);
   run.check("expected scenario: verdict OVERTURNED with bond RETURNED", r.status === "FINAL" && r.appeal_result === "OVERTURNED" && r.appeal_bond_outcome === "RETURNED", { first, final: r.verdict, appeal: r.appeal_result });
@@ -172,16 +176,16 @@ if (name === "screens") {
   await run.start(D);
   const actors = [A, B, C, D];
   const before = (await read("get_stats")).works;
-  const regs = await Promise.all(actors.map((w, i) => run.write(`concurrent register_work (${w.label})`, w, "register_work", [`Harbor Lights concurrent ${w.label}`, `${PAGES.noCredit.replace(/reported\/.*/, "original/harbor-lights.txt")}?run=${tag}-${i}`, "CC-BY", []])));
+  const regs = await Promise.all(actors.map((w, i) => run.write(`concurrent register_work (${w.label})`, w, "register_work", [TITLE, `${PAGES.noCredit.replace(/reported\/.*/, "original/harbor-lights.txt")}?run=${tag}-${i}`, "CC-BY", []])));
   const wids = regs.map((r) => r.values.id);
   run.check("every registration returned a distinct, fresh id", wids.every(Number.isInteger) && new Set(wids).size === 4 && wids.every((i) => i >= before), { before, wids });
   for (let i = 0; i < 4; i++) {
     const w = await read("get_work", [wids[i]]);
-    run.check(`wallet ${actors[i].label}: returned work id ${wids[i]} is its own`, w.creator === actors[i].address && w.title.endsWith(actors[i].label), { status: w.status });
+    run.check(`wallet ${actors[i].label}: returned work id ${wids[i]} is its own`, w.creator === actors[i].address && w.original_url.endsWith(`${tag}-${i}`), { status: w.status });
   }
   const ok = [];
   for (let i = 0; i < 4; i++) if ((await read("get_work", [wids[i]])).status === "REGISTERED") ok.push(wids[i]);
-  const target = ok[0];
+  const target = ok.length ? ok[0] : await work();
   const urls = [PAGES.noCredit, PAGES.noCredit2, PAGES.poster, PAGES.withCredit];
   const reps = await Promise.all(actors.map((w, i) => fileReport(run, w, target, urls[i], "ATTRIBUTION", CLAIM_ATTR, { label: `concurrent file_report (${w.label})` })));
   const rids = reps.map((r) => r.values.id);
