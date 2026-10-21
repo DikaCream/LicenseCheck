@@ -1,0 +1,9 @@
+Lantern Zine, issue 13 (fictional test fixture for LicenseCheck)
+
+The harbor lights are folding into rain,
+the cranes stand still like herons made of iron,
+and every ferry carries home a name
+the tide forgot to write upon the shoreline.
+
+Credits for this text: see the issue credits page linked here:
+https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/appeal/lantern-credits.txt

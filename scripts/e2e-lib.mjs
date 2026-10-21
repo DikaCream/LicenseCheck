@@ -17,8 +17,10 @@ export const PAGES = {
   poster: RAW + "reported/poster-shop.txt",
   vague: RAW + "reported/vague-mention.txt",
   illegible: RAW + "reported/credit-illegible.txt",
+  conflicting: RAW + "reported/conflicting-credit.txt",
   creditElsewhere: RAW + "reported/credit-elsewhere.txt",
   credits: RAW + "appeal/lantern-credits.txt",
+  creditLinked: RAW + "reported/credit-linked.txt",
   swap: RAW + "swap/page.txt",
 };
 export const TITLE = "Harbor Lights - a poem by Mira Okafor";

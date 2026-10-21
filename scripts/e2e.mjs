@@ -75,7 +75,7 @@ if (name === "screens") {
     violation: [PAGES.noCredit, "ATTRIBUTION", CLAIM_ATTR, "VIOLATION"],
     compliant: [PAGES.withCredit, "ATTRIBUTION", "The reading club page reproduces the first stanza of Harbor Lights; I claim it does not credit Mira Okafor or link to the original.", "COMPLIANT"],
     noncommercial: [PAGES.poster, "NONCOMMERCIAL", CLAIM_NC, "VIOLATION"],
-    inconclusive: [PAGES.illegible, "ATTRIBUTION", "The moodboard page reproduces the first stanza of Harbor Lights; its credit line is illegible, so it does not clearly name Mira Okafor or link to the original.", "INCONCLUSIVE"],
+    inconclusive: [PAGES.conflicting, "ATTRIBUTION", "The moodboard page reproduces the first stanza of Harbor Lights and its credit to Mira Okafor has been withdrawn by an editor, so the page no longer credits the author.", "INCONCLUSIVE"],
   }[name];
   const before = await bal(B);
   const id = await reportAndJudge(wid, cfg[0], cfg[1], cfg[2]);
@@ -125,12 +125,12 @@ if (name === "screens") {
   }
 } else if (name === "overturn") {
   const wid = await work();
-  const id = await reportAndJudge(wid, PAGES.creditElsewhere, "ATTRIBUTION", "The zine page reproduces the first stanza of Harbor Lights with no name of Mira Okafor and no link to the original, so attribution is missing.", { aw: 1800 });
+  const id = await reportAndJudge(wid, PAGES.creditLinked, "ATTRIBUTION", "The zine page reproduces the first stanza of Harbor Lights and does not itself name Mira Okafor or link to the original, so attribution is missing.", { aw: 1800 });
   let r = await rep(id);
   const first = r.verdict;
   const appellant = first === "VIOLATION" ? C : B;
   await run.write(`appeal by ${appellant.label} adding the zine's credits page (with #fragment)`, appellant, "appeal",
-    [id, "The zine page says credits are printed on a separate credits page; that credits page names Mira Okafor and links to the original.", PAGES.credits + "#issue-12"]);
+    [id, "The zine page links directly to its credits page, and that linked credits page names Mira Okafor and links the original. A linked credits page is reasonable attribution, so the page credits the author.", PAGES.credits + "#issue-12"]);
   r = await rep(id);
   run.check("appeal exhibit stored canonically (fragment stripped) and snapshotted", r.appeal_evidence === PAGES.credits, r.appeal_evidence);
   // A round whose validators cannot agree (UNDETERMINED) changes nothing on-chain; it can be retried before the deadline.
