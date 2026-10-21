@@ -75,7 +75,7 @@ if (name === "screens") {
     violation: [PAGES.noCredit, "ATTRIBUTION", CLAIM_ATTR, "VIOLATION"],
     compliant: [PAGES.withCredit, "ATTRIBUTION", "The reading club page reproduces the first stanza of Harbor Lights; I claim it does not credit Mira Okafor or link to the original.", "COMPLIANT"],
     noncommercial: [PAGES.poster, "NONCOMMERCIAL", CLAIM_NC, "VIOLATION"],
-    inconclusive: [PAGES.vague, "CUSTOM_1", "The moodboard page refers to the Harbor Lights poem from a postcard but never states the calendar date on which the poem was copied, as custom clause 1 requires.", "INCONCLUSIVE"],
+    inconclusive: [PAGES.dateUnclear, "CUSTOM_1", "The moodboard page reproduces the first stanza of Harbor Lights but does not state the calendar date on which the poem was copied, as custom clause 1 requires; it only points to a photo that is not on the page.", "INCONCLUSIVE"],
   }[name];
   const before = await bal(B);
   const id = await reportAndJudge(wid, cfg[0], cfg[1], cfg[2]);

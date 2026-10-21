@@ -16,6 +16,7 @@ export const PAGES = {
   withCredit: RAW + "reported/copy-with-credit.txt",
   poster: RAW + "reported/poster-shop.txt",
   vague: RAW + "reported/vague-mention.txt",
+  dateUnclear: RAW + "reported/date-unclear.txt",
   creditElsewhere: RAW + "reported/credit-elsewhere.txt",
   credits: RAW + "appeal/lantern-credits.txt",
   swap: RAW + "swap/page.txt",
