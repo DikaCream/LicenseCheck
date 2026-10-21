@@ -1,0 +1,296 @@
+{
+  "demo": "browser-originated workflow",
+  "site": "https://licensecheck-dikacreams-projects.vercel.app",
+  "contract": "0x9e2885d91a1F9A426ceEd1580863840395CC109c",
+  "startedAt": "2026-10-21T02:08:40.455Z",
+  "wallets": {
+    "creator": "0xBb9E609bf277a0Ffb0018515d0a850037C2b17c3",
+    "reporter": "0x4114320e6217407814992C42DC4573ea85A00b60"
+  },
+  "steps": [
+    {
+      "step": "register work",
+      "actor": "creator",
+      "tx_from_ui": "0xdb4e7d984c8a0f49b2ffe1e3ee0ec0a9267621cd842bfe4961a773d6e66c4a55",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xdb4e7d984c8a0f49b2ffe1e3ee0ec0a9267621cd842bfe4961a773d6e66c4a55",
+      "ui_outcome": "OK",
+      "seconds": 45
+    },
+    {
+      "step": "file misuse report (bond 50)",
+      "actor": "reporter",
+      "tx_from_ui": "0x1db7527ab495c94b83bb201ef0c4d085a886b375820acc07e3b1c8cb58722136",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x1db7527ab495c94b83bb201ef0c4d085a886b375820acc07e3b1c8cb58722136",
+      "ui_outcome": "OK",
+      "seconds": 48
+    },
+    {
+      "step": "run the examination",
+      "actor": "reporter",
+      "tx_from_ui": "0x3dc0048816caa7f2b230eae362a3ec26dc13d30e3ecb882e80677c2faeeb7f2c",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x3dc0048816caa7f2b230eae362a3ec26dc13d30e3ecb882e80677c2faeeb7f2c",
+      "ui_outcome": "OK",
+      "seconds": 54
+    },
+    {
+      "step": "lodge appeal (bond 100)",
+      "actor": "creator",
+      "tx_from_ui": "0x24568189748d9da5acef21b1ce0af3559b9b9e154c4770733c66ee22cf1026b7",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x24568189748d9da5acef21b1ce0af3559b9b9e154c4770733c66ee22cf1026b7",
+      "ui_outcome": "OK",
+      "seconds": 36
+    },
+    {
+      "step": "decide the appeal",
+      "actor": "creator",
+      "tx_from_ui": "0xab82d6cd51c6231f4acaf587f5525179812ef8bb60a89e2881adba3ab8380d6b",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xab82d6cd51c6231f4acaf587f5525179812ef8bb60a89e2881adba3ab8380d6b",
+      "ui_outcome": "OK",
+      "seconds": 128
+    }
+  ],
+  "checks": [
+    {
+      "check": "UI navigated to the work id returned by the transaction (not count-before)",
+      "pass": true,
+      "detail": {
+        "navigated_to": 31,
+        "works_before": 31,
+        "status": "REGISTERED",
+        "reason": ""
+      }
+    },
+    {
+      "check": "report id from the tx result belongs to this work and reporter",
+      "pass": true,
+      "detail": {
+        "rid": 26,
+        "status": "OPEN"
+      }
+    },
+    {
+      "check": "verdict stored with structured findings",
+      "pass": true,
+      "detail": {
+        "verdict": "VIOLATION",
+        "rounds": 1
+      }
+    },
+    {
+      "check": "report FINAL after the appeal, settled on-chain",
+      "pass": true,
+      "detail": {
+        "first": "VIOLATION",
+        "final": "VIOLATION",
+        "appeal": "UPHELD"
+      }
+    },
+    {
+      "check": "points conserved after the demo",
+      "pass": true,
+      "detail": {
+        "appeals": 8,
+        "balances": 74850,
+        "by_status": {
+          "APPEALED": 1,
+          "FINAL": 15,
+          "JUDGED": 2,
+          "OPEN": 7,
+          "REJECTED": 1,
+          "VOID": 1
+        },
+        "conserved": true,
+        "escrow": 600,
+        "minted": 76000,
+        "overturned": 0,
+        "pool": 550,
+        "registered": 25,
+        "reports": 27,
+        "users": 76,
+        "works": 33
+      }
+    },
+    {
+      "check": "every UI action ended FINALIZED + verified",
+      "pass": true,
+      "detail": "5 actions"
+    },
+    {
+      "check": "private keys never present in the page",
+      "pass": true
+    }
+  ],
+  "rpcMethodsSeenByNodeSigner": {
+    "eth_accounts": 13,
+    "eth_chainId": 13,
+    "eth_sendTransaction": 5
+  },
+  "work": {
+    "clauses": [],
+    "compliant": 0,
+    "creator": "0xBb9E609bf277a0Ffb0018515d0a850037C2b17c3",
+    "id": 31,
+    "inconclusive": 0,
+    "license": "CC-BY-NC",
+    "original_url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt?run=browser-1792548581282",
+    "ownership_marker": false,
+    "registered_at": 1792548587,
+    "reject_reason": "",
+    "reports": 0,
+    "snapshot": {
+      "chars": 593,
+      "sha256": "961d61344df988e3b0186478edd237cf00b1d0fe59c16472038f9c96c15a03fb",
+      "truncated": false
+    },
+    "status": "REGISTERED",
+    "terms": [
+      "ATTRIBUTION",
+      "NONCOMMERCIAL"
+    ],
+    "title": "Harbor Lights - a poem by Mira Okafor",
+    "violations": 0
+  },
+  "report": {
+    "id": 26,
+    "final": {
+      "appeal_attempts": 0,
+      "appeal_bond_outcome": "FORFEITED",
+      "appeal_due": 1792552351,
+      "appeal_ends": 1792552286,
+      "appeal_evidence": "",
+      "appeal_grace_s": 600,
+      "appeal_grounds": "Please re-read both stored snapshots: the attribution question should be decided on the full text, not a summary.",
+      "appeal_open": false,
+      "appeal_result": "UPHELD",
+      "appeal_timeout": 3600,
+      "appeal_undetermined": 0,
+      "appeal_window": 3600,
+      "appealed_at": 1792548751,
+      "appellant": "0xBb9E609bf277a0Ffb0018515d0a850037C2b17c3",
+      "bond": 50,
+      "claim": "The reported page reproduces the full first stanza of Harbor Lights but never names Mira Okafor or links to the original, so the attribution term is broken.",
+      "clause": "",
+      "evidence_changed": false,
+      "filed_at": 1792548637,
+      "final_at": 1792548790,
+      "first_verdict": "VIOLATION",
+      "id": 26,
+      "judge_due": 1792552237,
+      "judge_timeout": 3600,
+      "judged_at": 1792548686,
+      "reject_reason": "",
+      "reported_url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/copy-no-credit.txt",
+      "reporter": "0x4114320e6217407814992C42DC4573ea85A00b60",
+      "reward": 25,
+      "rounds": 2,
+      "snapshot": {
+        "chars": 525,
+        "sha256": "4a2d8827789760ddd4109328fbbdb38426eff2ca58b3f120d3ac7c5ffed90f4d",
+        "truncated": false
+      },
+      "status": "FINAL",
+      "term": "ATTRIBUTION",
+      "term_question": "Does the reported page credit the original work or its creator (name, title or link)?",
+      "term_rule": "Any reuse must credit the creator or link to the original work.",
+      "verdict": "VIOLATION",
+      "void_reason": "",
+      "work_id": 31,
+      "work_title": "Harbor Lights - a poem by Mira Okafor"
+    },
+    "rounds": [
+      {
+        "caller": "0x4114320e6217407814992C42DC4573ea85A00b60",
+        "decisive": 1,
+        "evidence_changed": [],
+        "evidence_incomplete": [],
+        "evidence_quote": "Posted by the Driftwood Daily editors.",
+        "findings": [
+          {
+            "fact": "The reported page reproduces the text of the original poem.",
+            "quote": "The harbor lights are folding into rain,",
+            "source": 1,
+            "supports": "NEUTRAL",
+            "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/copy-no-credit.txt"
+          },
+          {
+            "fact": "The reported page does not mention Mira Okafor, the title 'Harbor Lights', or provide a link to the original work.",
+            "quote": "Posted by the Driftwood Daily editors.",
+            "source": 1,
+            "supports": "VIOLATION",
+            "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/copy-no-credit.txt"
+          }
+        ],
+        "kind": "INITIAL",
+        "reasoning": "The reported page reproduces the entire poem from the original source. It fails to provide attribution to Mira Okafor or link to the original work as required by the CC-BY-NC license.",
+        "reuses_work": "YES",
+        "source_url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/copy-no-credit.txt",
+        "sources": [
+          "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt?run=browser-1792548581282",
+          "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/copy-no-credit.txt"
+        ],
+        "term_answer": "NO",
+        "timestamp": 1792548686,
+        "verdict": "VIOLATION"
+      },
+      {
+        "caller": "0xBb9E609bf277a0Ffb0018515d0a850037C2b17c3",
+        "decisive": 0,
+        "evidence_changed": [],
+        "evidence_incomplete": [],
+        "evidence_quote": "The harbor lights are folding into rain,",
+        "findings": [
+          {
+            "fact": "The reported page reproduces the full text of the poem verbatim without naming Mira Okafor or linking to the original.",
+            "quote": "The harbor lights are folding into rain,",
+            "source": 1,
+            "supports": "VIOLATION",
+            "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/copy-no-credit.txt"
+          },
+          {
+            "fact": "The license explicitly requires crediting Mira Okafor and linking to the original page.",
+            "quote": "You may share and adapt this poem for non-commercial purposes if you credit Mira Okafor and link to this page.",
+            "source": 0,
+            "supports": "NEUTRAL",
+            "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt?run=browser-1792548581282"
+          },
+          {
+            "fact": "The only attribution present names the republisher, not the original creator Mira Okafor, and no link to the original is provided.",
+            "quote": "Posted by the Driftwood Daily editors.",
+            "source": 1,
+            "supports": "VIOLATION",
+            "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/copy-no-credit.txt"
+          }
+        ],
+        "kind": "APPEAL",
+        "reasoning": "The reported page reproduces the entire poem verbatim from the original work but contains no mention of Mira Okafor's name, the title 'Harbor Lights', or any link to the original source. This directly violates the CC-BY-NC attribution requirement as stated in the license text of the original work.",
+        "reuses_work": "YES",
+        "source_url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/copy-no-credit.txt",
+        "sources": [
+          "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt?run=browser-1792548581282",
+          "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/copy-no-credit.txt"
+        ],
+        "term_answer": "NO",
+        "timestamp": 1792548790,
+        "verdict": "VIOLATION"
+      }
+    ]
+  },
+  "uiPersistedTxRecords": [
+    {
+      "method": "rule_appeal",
+      "state": "CONFIRMED",
+      "hash": "0xab82d6cd51c6231f4acaf587f5525179812ef8bb60a89e2881adba3ab8380d6b"
+    },
+    {
+      "method": "appeal",
+      "state": "CONFIRMED",
+      "hash": "0x24568189748d9da5acef21b1ce0af3559b9b9e154c4770733c66ee22cf1026b7"
+    },
+    {
+      "method": "register_work",
+      "state": "CONFIRMED",
+      "hash": "0xdb4e7d984c8a0f49b2ffe1e3ee0ec0a9267621cd842bfe4961a773d6e66c4a55"
+    }
+  ],
+  "finishedAt": "2026-10-21T02:15:35.650Z"
+}
