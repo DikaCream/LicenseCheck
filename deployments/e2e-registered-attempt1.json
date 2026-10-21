@@ -1,0 +1,269 @@
+{
+  "scenario": "registered",
+  "network": "studionet",
+  "chainId": 61999,
+  "contract": "0x9e2885d91a1F9A426ceEd1580863840395CC109c",
+  "startedAt": "2026-10-21T01:26:04.978Z",
+  "actors": {
+    "A_creator": "0x181F2f8c94B76EF739b04c5A1f7ce260BE547995",
+    "B_reporter": "0x8e45cFBBaa748bEA571b84cEccA5c6B416A794F1",
+    "C_accused": "0xdfE1c6365274b5A736E18235F4BE1F117bF43AE7"
+  },
+  "steps": [
+    {
+      "step": "claim_points (A_creator)",
+      "actor": "A_creator",
+      "method": "claim_points",
+      "tx": "0x4b1bde31dcc0aa81cd0c831ebb4def176882931d675ab8c63a9865dec612c63d",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x4b1bde31dcc0aa81cd0c831ebb4def176882931d675ab8c63a9865dec612c63d",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 121,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (B_reporter)",
+      "actor": "B_reporter",
+      "method": "claim_points",
+      "tx": "0xb3446a3c16ff5c37675dbd35270aebeb232ccc1fbf6ddb565a8945b838e64347",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xb3446a3c16ff5c37675dbd35270aebeb232ccc1fbf6ddb565a8945b838e64347",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 54,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (C_accused)",
+      "actor": "C_accused",
+      "method": "claim_points",
+      "tx": "0xda8bad6a6dc6a97dc46e88958100f29e8f9114737bd846e9a841e827d8fda1e5",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xda8bad6a6dc6a97dc46e88958100f29e8f9114737bd846e9a841e827d8fda1e5",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 261,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "register_work (registered-5965012)",
+      "actor": "A_creator",
+      "method": "register_work",
+      "tx": "0xe86ca6f8180e67c9d2b0789f469dfe403119dd642a9ff0dc8902fce0cc2eb5f3",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xe86ca6f8180e67c9d2b0789f469dfe403119dd642a9ff0dc8902fce0cc2eb5f3",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 10,
+      "seconds": 30,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "file_report ATTRIBUTION copy-no-credit.txt",
+      "actor": "B_reporter",
+      "method": "file_report",
+      "tx": "0x3e47ca2e4a43863504531d51fb33f534d861c1b0e45612d0d70a9f44c1adf912",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x3e47ca2e4a43863504531d51fb33f534d861c1b0e45612d0d70a9f44c1adf912",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 9,
+      "seconds": 71,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "judge (attempt 1)",
+      "actor": "A_creator",
+      "method": "judge",
+      "tx": "0x5530af11b57c98b452d8560ebb3351466e797e66a11e4ed2b6be9ca8855232d4",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x5530af11b57c98b452d8560ebb3351466e797e66a11e4ed2b6be9ca8855232d4",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 9,
+      "seconds": 154,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "appeal by C_accused (first verdict VIOLATION)",
+      "actor": "C_accused",
+      "method": "appeal",
+      "tx": "0xb031a294902f78d5c246458a4459ce0e57eb7ff5a92a903083d582fa93678861",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xb031a294902f78d5c246458a4459ce0e57eb7ff5a92a903083d582fa93678861",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 9,
+      "seconds": 158,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "register_appeal_attempt",
+      "actor": "C_accused",
+      "method": "register_appeal_attempt",
+      "tx": "0x08605528d4acca1dccd0d7910f3dd50c4898aff80f4d26324612b01f68492909",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x08605528d4acca1dccd0d7910f3dd50c4898aff80f4d26324612b01f68492909",
+      "status": "ACCEPTED",
+      "execution": "ERROR",
+      "ok": false,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 38,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "rule_appeal after the deadline reverts",
+      "actor": "A_creator",
+      "method": "rule_appeal",
+      "tx": "0x90d7321135e70021f56aab2a4b04586b8d6791094b56bc0779464b0fea0db6ce",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x90d7321135e70021f56aab2a4b04586b8d6791094b56bc0779464b0fea0db6ce",
+      "status": "ACCEPTED",
+      "execution": "ERROR",
+      "ok": true,
+      "expected": "revert",
+      "returned_id": null,
+      "seconds": 34,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "expire (anyone applies the finality rules)",
+      "actor": "A_creator",
+      "method": "expire",
+      "tx": "0xb9b87514b396c416a931e6f1c8cbfc65311fe0c20e5cd080646aeee3de66d56a",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xb9b87514b396c416a931e6f1c8cbfc65311fe0c20e5cd080646aeee3de66d56a",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 9,
+      "seconds": 58,
+      "final_status": "FINALIZED"
+    }
+  ],
+  "checks": [
+    {
+      "check": "work 10 registered from the tx's own return id (attempt 1)",
+      "pass": true,
+      "detail": {
+        "status": "REGISTERED",
+        "reason": ""
+      }
+    },
+    {
+      "check": "report 9 filed (attempt 1)",
+      "pass": true,
+      "detail": {
+        "status": "OPEN",
+        "reason": ""
+      }
+    },
+    {
+      "check": "attempt recorded on-chain and 600 s grace added",
+      "pass": false,
+      "detail": {
+        "attempts": 0,
+        "due": 1792546724
+      }
+    },
+    {
+      "check": "first verdict stands and report is FINAL (no escape)",
+      "pass": true,
+      "detail": {
+        "first": "VIOLATION",
+        "verdict": "VIOLATION",
+        "appeal": "UNRESOLVED"
+      }
+    },
+    {
+      "check": "appeal bond SPLIT",
+      "pass": false,
+      "detail": {
+        "bond": "FORFEITED"
+      }
+    },
+    {
+      "check": "points conserved: balances + escrow + pool == minted",
+      "pass": true,
+      "detail": {
+        "minted": 51000,
+        "balances": 50375,
+        "escrow": 350,
+        "pool": 275
+      }
+    }
+  ],
+  "verdicts": [
+    {
+      "report": 9,
+      "verdict": "VIOLATION",
+      "term_answer": "NO",
+      "reuses_work": "YES",
+      "findings": [
+        {
+          "fact": "The reported page introduces the poem without crediting the original creator or linking to the source.",
+          "quote": "This week we share a poem that we love:",
+          "source": 1,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/copy-no-credit.txt"
+        },
+        {
+          "fact": "The full text of the original poem is reproduced verbatim in the reported page.",
+          "quote": "The harbor lights are folding into rain,\nthe cranes stand still like herons made of iron,\nand every ferry carries home a name\nthe tide forgot to write upon the shoreline.\n\nI count the windows burning on the hill,\none for each sailor who did not come back,\nand the lighthouse keeps its promise still:\na white word spoken to the black.",
+          "source": 1,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/copy-no-credit.txt"
+        },
+        {
+          "fact": "The original work explicitly identifies Mira Okafor as the creator.",
+          "quote": "A poem by Mira Okafor (fictional test fixture for LicenseCheck)",
+          "source": 0,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt?run=registered-5965012"
+        },
+        {
+          "fact": "The reported page attributes the posting to its own editors but fails to mention Mira Okafor or provide a link to the original work.",
+          "quote": "Posted by the Driftwood Daily editors. Subscribe for a new poem every week.",
+          "source": 1,
+          "supports": "VIOLATION",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/copy-no-credit.txt"
+        }
+      ],
+      "reasoning": "The reported page reproduces the full original poem without crediting Mira Okafor or linking to the source, which violates the attribution term of the CC-BY-NC license."
+    }
+  ],
+  "stats": {
+    "appeals": 4,
+    "balances": 50375,
+    "by_status": {
+      "APPEALED": 1,
+      "FINAL": 8,
+      "JUDGED": 2,
+      "OPEN": 2,
+      "REJECTED": 1,
+      "VOID": 1
+    },
+    "conserved": true,
+    "escrow": 350,
+    "minted": 51000,
+    "overturned": 0,
+    "pool": 275,
+    "registered": 15,
+    "reports": 15,
+    "users": 51,
+    "works": 20
+  },
+  "finishedAt": "2026-10-21T01:43:07.739Z",
+  "all_finalized": true,
+  "all_checks_pass": false
+}

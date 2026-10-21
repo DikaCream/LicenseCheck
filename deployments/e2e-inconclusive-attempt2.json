@@ -1,0 +1,266 @@
+{
+  "scenario": "inconclusive",
+  "network": "studionet",
+  "chainId": 61999,
+  "contract": "0x9e2885d91a1F9A426ceEd1580863840395CC109c",
+  "startedAt": "2026-10-21T01:51:21.119Z",
+  "actors": {
+    "A_creator": "0xf297454ecB8B3bA31Cd9B7dEd674008434C48F13",
+    "B_reporter": "0x9156d1B1053Af0E729C6eFF5171D2a3ddd620061",
+    "C_accused": "0x9A3F3b1F753b6A98352D0085Faaf3e01a40E6E07"
+  },
+  "steps": [
+    {
+      "step": "claim_points (A_creator)",
+      "actor": "A_creator",
+      "method": "claim_points",
+      "tx": "0xa357512429b53d834d5ec0f846b1eb2ab386e34ad1edcc95631fe84af898f250",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xa357512429b53d834d5ec0f846b1eb2ab386e34ad1edcc95631fe84af898f250",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 67,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (B_reporter)",
+      "actor": "B_reporter",
+      "method": "claim_points",
+      "tx": "0x6f2659e2cb7f19464582e5af7a0d9aeaa46fb0832d3c06122b05fded61b2040b",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x6f2659e2cb7f19464582e5af7a0d9aeaa46fb0832d3c06122b05fded61b2040b",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 95,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (C_accused)",
+      "actor": "C_accused",
+      "method": "claim_points",
+      "tx": "0xcc48b5436a7f218c392ca3f9d2290aed9aeaae716b2ffdeb4eee9745dc545dde",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xcc48b5436a7f218c392ca3f9d2290aed9aeaae716b2ffdeb4eee9745dc545dde",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 50,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "register_work (inconclusive-7481151)",
+      "actor": "A_creator",
+      "method": "register_work",
+      "tx": "0x7c7b1400f78ce0d96225fe7b69caa26d7771dca94a7b78995d1da626623bdc54",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x7c7b1400f78ce0d96225fe7b69caa26d7771dca94a7b78995d1da626623bdc54",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 28,
+      "seconds": 30,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "file_report ATTRIBUTION credit-illegible.txt",
+      "actor": "B_reporter",
+      "method": "file_report",
+      "tx": "0x3ac0b2a03012bb7b3ed3da3c46d1a64f244658165e3b593dc775afbbc35c1d40",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x3ac0b2a03012bb7b3ed3da3c46d1a64f244658165e3b593dc775afbbc35c1d40",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 22,
+      "seconds": 17,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "judge (attempt 1)",
+      "actor": "A_creator",
+      "method": "judge",
+      "tx": "0x7208b7047285ee6c53a00698a7258e389dba3178f096dfb6cda279a01aeef1cb",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x7208b7047285ee6c53a00698a7258e389dba3178f096dfb6cda279a01aeef1cb",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 22,
+      "seconds": 21,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "finalize",
+      "actor": "A_creator",
+      "method": "finalize",
+      "tx": "0xac85453206fc3aa95e2fd2b9867f57aab5bcac27f363c37481242fa26fad5796",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xac85453206fc3aa95e2fd2b9867f57aab5bcac27f363c37481242fa26fad5796",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 22,
+      "seconds": 5,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "re-report of a URL with a final VIOLATION precedent reverts",
+      "actor": "C_accused",
+      "method": "file_report",
+      "tx": "0x4e9d4563c81a813f29185f550c9352cc29755384a168ff697e2311cd82bfd8a7",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x4e9d4563c81a813f29185f550c9352cc29755384a168ff697e2311cd82bfd8a7",
+      "status": "ACCEPTED",
+      "execution": "ERROR",
+      "ok": true,
+      "expected": "revert",
+      "returned_id": null,
+      "seconds": 9,
+      "final_status": "FINALIZED"
+    }
+  ],
+  "checks": [
+    {
+      "check": "work 28 registered from the tx's own return id (attempt 1)",
+      "pass": true,
+      "detail": {
+        "status": "REGISTERED",
+        "reason": ""
+      }
+    },
+    {
+      "check": "report 22 filed (attempt 1)",
+      "pass": true,
+      "detail": {
+        "status": "OPEN",
+        "reason": ""
+      }
+    },
+    {
+      "check": "expected verdict INCONCLUSIVE",
+      "pass": false,
+      "detail": {
+        "verdict": "VIOLATION"
+      }
+    },
+    {
+      "check": "round stored structured findings (source index + verbatim quote)",
+      "pass": true,
+      "detail": [
+        {
+          "fact": "The reported page reproduces the first stanza of the original work verbatim.",
+          "quote": "The harbor lights are folding into rain,",
+          "source": 1,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/credit-illegible.txt"
+        },
+        {
+          "fact": "The credit line fails to provide the full name of the creator, the title, or a link to the original.",
+          "quote": "the rest of the credit line is illegible in the scan; we could not read the name, the link",
+          "source": 1,
+          "supports": "VIOLATION",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/credit-illegible.txt"
+        }
+      ]
+    },
+    {
+      "check": "snapshots of original + reported page stored with sha256 and full text",
+      "pass": true,
+      "detail": [
+        [
+          "ORIGINAL WORK",
+          "961d61344df9",
+          593,
+          false
+        ],
+        [
+          "REPORTED PAGE",
+          "ff44f9e042ed",
+          515,
+          false
+        ]
+      ]
+    },
+    {
+      "check": "report FINAL and bond settled per verdict",
+      "pass": true,
+      "detail": {
+        "verdict": "VIOLATION",
+        "delta": 25,
+        "reward": 25
+      }
+    },
+    {
+      "check": "outcome stored in the work's precedent registry",
+      "pass": true,
+      "detail": {
+        "violations": 1,
+        "compliant": 0,
+        "inconclusive": 0
+      }
+    },
+    {
+      "check": "points conserved: balances + escrow + pool == minted",
+      "pass": true,
+      "detail": {
+        "minted": 64000,
+        "balances": 62950,
+        "escrow": 750,
+        "pool": 300
+      }
+    }
+  ],
+  "verdicts": [
+    {
+      "report": 22,
+      "verdict": "VIOLATION",
+      "term_answer": "NO",
+      "reuses_work": "YES",
+      "findings": [
+        {
+          "fact": "The reported page reproduces the first stanza of the original work verbatim.",
+          "quote": "The harbor lights are folding into rain,",
+          "source": 1,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/credit-illegible.txt"
+        },
+        {
+          "fact": "The credit line fails to provide the full name of the creator, the title, or a link to the original.",
+          "quote": "the rest of the credit line is illegible in the scan; we could not read the name, the link",
+          "source": 1,
+          "supports": "VIOLATION",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/credit-illegible.txt"
+        }
+      ],
+      "reasoning": "The reported page reproduces a significant portion of the poem but failed to provide a legible credit to the creator or a link as required by the CC-BY-NC license. Because the attribution is incomplete and illegible, the literal requirement for credit is not met."
+    }
+  ],
+  "stats": {
+    "appeals": 6,
+    "balances": 62950,
+    "by_status": {
+      "APPEALED": 2,
+      "FINAL": 11,
+      "JUDGED": 2,
+      "OPEN": 7,
+      "REJECTED": 1,
+      "VOID": 1
+    },
+    "conserved": true,
+    "escrow": 750,
+    "minted": 64000,
+    "overturned": 0,
+    "pool": 300,
+    "registered": 21,
+    "reports": 24,
+    "users": 64,
+    "works": 29
+  },
+  "finishedAt": "2026-10-21T01:58:44.702Z",
+  "all_finalized": true,
+  "all_checks_pass": false
+}

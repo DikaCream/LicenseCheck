@@ -1,0 +1,294 @@
+{
+  "scenario": "inconclusive",
+  "network": "studionet",
+  "chainId": 61999,
+  "contract": "0x9e2885d91a1F9A426ceEd1580863840395CC109c",
+  "startedAt": "2026-10-21T01:37:06.197Z",
+  "actors": {
+    "A_creator": "0x2ed434C48826ecace385b7ED5A561354F78ef7a1",
+    "B_reporter": "0x8f6D6db71AD9f16f34906F4bA7F58B60A4324561",
+    "C_accused": "0x325A47cfd292614f36A38c8A671c3C2Ef56b04fA"
+  },
+  "steps": [
+    {
+      "step": "claim_points (A_creator)",
+      "actor": "A_creator",
+      "method": "claim_points",
+      "tx": "0x09a7f856b5be921dee5046329ff0ccc77fa78a08d7a31b37a6dcb4f79cac1d4d",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x09a7f856b5be921dee5046329ff0ccc77fa78a08d7a31b37a6dcb4f79cac1d4d",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 183,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (B_reporter)",
+      "actor": "B_reporter",
+      "method": "claim_points",
+      "tx": "0x113cbe295703a42f138f9b72636670e55e9dd56cd724d91abc4ce987e4232c7a",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x113cbe295703a42f138f9b72636670e55e9dd56cd724d91abc4ce987e4232c7a",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 38,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (C_accused)",
+      "actor": "C_accused",
+      "method": "claim_points",
+      "tx": "0xeed6eeaf4fa7a5bcf410b82a4d98c79a3c9410cbb02403b90b13b9352f77644a",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xeed6eeaf4fa7a5bcf410b82a4d98c79a3c9410cbb02403b90b13b9352f77644a",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 29,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "register_work (inconclusive-6626233)",
+      "actor": "A_creator",
+      "method": "register_work",
+      "tx": "0xf6b99dbcc85b406500329ea973e2523e4f8bbe2d6863c6aaf04226c75b2600dc",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xf6b99dbcc85b406500329ea973e2523e4f8bbe2d6863c6aaf04226c75b2600dc",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 19,
+      "seconds": 42,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "file_report CUSTOM_1 date-unclear.txt",
+      "actor": "B_reporter",
+      "method": "file_report",
+      "tx": "0x6627b2c5fe2ee06dc91fe5fbcff1cc7a5f510f1516d39332dc912741f93df0c7",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x6627b2c5fe2ee06dc91fe5fbcff1cc7a5f510f1516d39332dc912741f93df0c7",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 15,
+      "seconds": 42,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "judge (attempt 1)",
+      "actor": "A_creator",
+      "method": "judge",
+      "tx": "0x806ac02c35134f584a0b48163e3394031b95cc7a099655484da481bea68eb4f9",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x806ac02c35134f584a0b48163e3394031b95cc7a099655484da481bea68eb4f9",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 15,
+      "seconds": 21,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "finalize",
+      "actor": "A_creator",
+      "method": "finalize",
+      "tx": "0xd6c0966bb0cef9ca893ad0b3bc1bbd774554d58500d0435433c8c0193210dcd9",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xd6c0966bb0cef9ca893ad0b3bc1bbd774554d58500d0435433c8c0193210dcd9",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 15,
+      "seconds": 9,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "re-report of a URL with a final VIOLATION precedent reverts",
+      "actor": "C_accused",
+      "method": "file_report",
+      "tx": "0x465e10af1547de983b8fe6b244e617af94aa17d420677c6f36b39eae0eda8495",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x465e10af1547de983b8fe6b244e617af94aa17d420677c6f36b39eae0eda8495",
+      "status": "ACCEPTED",
+      "execution": "ERROR",
+      "ok": true,
+      "expected": "revert",
+      "returned_id": null,
+      "seconds": 5,
+      "final_status": "FINALIZED"
+    }
+  ],
+  "checks": [
+    {
+      "check": "work 19 registered from the tx's own return id (attempt 1)",
+      "pass": true,
+      "detail": {
+        "status": "REGISTERED",
+        "reason": ""
+      }
+    },
+    {
+      "check": "report 15 filed (attempt 1)",
+      "pass": true,
+      "detail": {
+        "status": "OPEN",
+        "reason": ""
+      }
+    },
+    {
+      "check": "expected verdict INCONCLUSIVE",
+      "pass": false,
+      "detail": {
+        "verdict": "VIOLATION"
+      }
+    },
+    {
+      "check": "round stored structured findings (source index + verbatim quote)",
+      "pass": true,
+      "detail": [
+        {
+          "fact": "The reported page reproduces the first stanza of the original poem verbatim.",
+          "quote": "The harbor lights are folding into rain,",
+          "source": 1,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/date-unclear.txt"
+        },
+        {
+          "fact": "The page does not state a calendar date directly; it defers to a photo that is explicitly absent from this text version, so no calendar date is actually provided.",
+          "quote": "Copy date: see the photo of our notebook page above (the photo is not part of this text version).",
+          "source": 1,
+          "supports": "VIOLATION",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/date-unclear.txt"
+        },
+        {
+          "fact": "Even if the photo were present, the editor admits the date is uncertain, confirming no definite calendar date is stated.",
+          "quote": "we are not sure whether the stanza was copied in spring or in autumn; the notebook entry may be from either.",
+          "source": 1,
+          "supports": "VIOLATION",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/date-unclear.txt"
+        },
+        {
+          "fact": "The original work is licensed CC BY-NC 4.0, under which the custom clause requiring a stated calendar copy date applies.",
+          "quote": "License: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0).",
+          "source": 0,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt?run=inconclusive-6626233"
+        }
+      ]
+    },
+    {
+      "check": "snapshots of original + reported page stored with sha256 and full text",
+      "pass": true,
+      "detail": [
+        [
+          "ORIGINAL WORK",
+          "961d61344df9",
+          593,
+          false
+        ],
+        [
+          "REPORTED PAGE",
+          "14a62960262c",
+          604,
+          false
+        ]
+      ]
+    },
+    {
+      "check": "report FINAL and bond settled per verdict",
+      "pass": true,
+      "detail": {
+        "verdict": "VIOLATION",
+        "delta": 25,
+        "reward": 25
+      }
+    },
+    {
+      "check": "outcome stored in the work's precedent registry",
+      "pass": true,
+      "detail": {
+        "violations": 1,
+        "compliant": 0,
+        "inconclusive": 0
+      }
+    },
+    {
+      "check": "points conserved: balances + escrow + pool == minted",
+      "pass": true,
+      "detail": {
+        "minted": 51000,
+        "balances": 50400,
+        "escrow": 350,
+        "pool": 250
+      }
+    }
+  ],
+  "verdicts": [
+    {
+      "report": 15,
+      "verdict": "VIOLATION",
+      "term_answer": "YES",
+      "reuses_work": "YES",
+      "findings": [
+        {
+          "fact": "The reported page reproduces the first stanza of the original poem verbatim.",
+          "quote": "The harbor lights are folding into rain,",
+          "source": 1,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/date-unclear.txt"
+        },
+        {
+          "fact": "The page does not state a calendar date directly; it defers to a photo that is explicitly absent from this text version, so no calendar date is actually provided.",
+          "quote": "Copy date: see the photo of our notebook page above (the photo is not part of this text version).",
+          "source": 1,
+          "supports": "VIOLATION",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/date-unclear.txt"
+        },
+        {
+          "fact": "Even if the photo were present, the editor admits the date is uncertain, confirming no definite calendar date is stated.",
+          "quote": "we are not sure whether the stanza was copied in spring or in autumn; the notebook entry may be from either.",
+          "source": 1,
+          "supports": "VIOLATION",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/date-unclear.txt"
+        },
+        {
+          "fact": "The original work is licensed CC BY-NC 4.0, under which the custom clause requiring a stated calendar copy date applies.",
+          "quote": "License: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0).",
+          "source": 0,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt?run=inconclusive-6626233"
+        }
+      ],
+      "reasoning": "The reported page reproduces the first stanza of the original poem but provides no actual calendar date of copying, instead pointing to a photo explicitly absent from the text version. The custom clause requires that the calendar date on which the poem was copied be stated, and that requirement is not satisfied."
+    }
+  ],
+  "stats": {
+    "appeals": 4,
+    "balances": 50400,
+    "by_status": {
+      "APPEALED": 1,
+      "FINAL": 9,
+      "JUDGED": 2,
+      "OPEN": 2,
+      "REJECTED": 1,
+      "VOID": 1
+    },
+    "conserved": true,
+    "escrow": 350,
+    "minted": 51000,
+    "overturned": 0,
+    "pool": 250,
+    "registered": 15,
+    "reports": 16,
+    "users": 51,
+    "works": 20
+  },
+  "finishedAt": "2026-10-21T01:45:46.446Z",
+  "all_finalized": true,
+  "all_checks_pass": false
+}
