@@ -1,0 +1,26 @@
+{
+  "name": "licensecheck",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "LicenseCheck - a public license registry on GenLayer: AI validators judge bonded misuse reports against structured license terms, with snapshots, quoted findings and a bonded appeal",
+  "scripts": {
+    "wallet:new": "node scripts/create-wallet.mjs",
+    "schema": "node scripts/schema-check.mjs",
+    "deploy:studionet": "node scripts/deploy.mjs",
+    "e2e": "node scripts/e2e.mjs",
+    "lint:contract": "genvm-lint check contracts/licensecheck.py",
+    "test:contract": "pytest tests/direct/ -v",
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "verify:deployment": "node scripts/verify-deployment.mjs",
+    "demo:browser": "node scripts/browser-demo.mjs"
+  },
+  "dependencies": {
+    "dotenv": "16.6.1",
+    "genlayer-js": "1.1.8"
+  },
+  "devDependencies": {
+    "playwright-core": "1.49.1"
+  }
+}
