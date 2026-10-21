@@ -1,0 +1,6 @@
+Coastal Moodboard - editorial dispute log (fictional test fixture for LicenseCheck)
+
+Entry 15, credit dispute: SETTLED.
+Both editors agree that the stanza in entry 15 Section A is from "Harbor Lights", a poem by Mira Okafor.
+The withdrawal in Section B was posted in error and is void. The credit "poem by Mira Okafor" in Section A stands,
+and the original is https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt

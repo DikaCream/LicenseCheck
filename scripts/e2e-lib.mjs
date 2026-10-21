@@ -21,6 +21,7 @@ export const PAGES = {
   creditElsewhere: RAW + "reported/credit-elsewhere.txt",
   credits: RAW + "appeal/lantern-credits.txt",
   creditLinked: RAW + "reported/credit-linked.txt",
+  disputeLog: RAW + "appeal/moodboard-dispute-log.txt",
   swap: RAW + "swap/page.txt",
 };
 export const TITLE = "Harbor Lights - a poem by Mira Okafor";

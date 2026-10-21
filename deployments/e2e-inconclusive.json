@@ -1,0 +1,280 @@
+{
+  "scenario": "inconclusive",
+  "network": "studionet",
+  "chainId": 61999,
+  "contract": "0x9e2885d91a1F9A426ceEd1580863840395CC109c",
+  "startedAt": "2026-10-21T02:01:09.406Z",
+  "actors": {
+    "A_creator": "0x2e82abCE1b8675395E28A543f5762002bcFAEdbf",
+    "B_reporter": "0x328fd87b95Cd639072cb8e8b84467FC3969Bf8B7",
+    "C_accused": "0x24AD082DfBD13D795eb005B0F7d24977d47ad49c"
+  },
+  "steps": [
+    {
+      "step": "claim_points (A_creator)",
+      "actor": "A_creator",
+      "method": "claim_points",
+      "tx": "0xb0d02d6913be11bc6dd129d195f3118b0fc247c714d480f3dd655ff264e63bb8",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xb0d02d6913be11bc6dd129d195f3118b0fc247c714d480f3dd655ff264e63bb8",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 9,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (B_reporter)",
+      "actor": "B_reporter",
+      "method": "claim_points",
+      "tx": "0xfefba7d130595677c66f191cc63b83f6ebcc8b739fdc11d631614f826f3719f5",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xfefba7d130595677c66f191cc63b83f6ebcc8b739fdc11d631614f826f3719f5",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 9,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (C_accused)",
+      "actor": "C_accused",
+      "method": "claim_points",
+      "tx": "0xae05b2e553456ca0863dd48739199e59a9f10c487f00727bc9520e08312ccbc1",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xae05b2e553456ca0863dd48739199e59a9f10c487f00727bc9520e08312ccbc1",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 9,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "register_work (inconclusive-8069433)",
+      "actor": "A_creator",
+      "method": "register_work",
+      "tx": "0x84a1cf89ef7e4fdc6cf00dcf836da415b7d30997e00340418942419cc8c234a7",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x84a1cf89ef7e4fdc6cf00dcf836da415b7d30997e00340418942419cc8c234a7",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 30,
+      "seconds": 25,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "file_report ATTRIBUTION conflicting-credit.txt",
+      "actor": "B_reporter",
+      "method": "file_report",
+      "tx": "0x9ab76d63f57c615544e8803bd8e23fdeb3a16f4e527c3d9fea86b15cac34dacb",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x9ab76d63f57c615544e8803bd8e23fdeb3a16f4e527c3d9fea86b15cac34dacb",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 25,
+      "seconds": 34,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "judge (attempt 1)",
+      "actor": "A_creator",
+      "method": "judge",
+      "tx": "0x8e5d8c114ed8214776c0c1192cb09af823e7e3e2709600cc50dcdab90c8f2f3c",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x8e5d8c114ed8214776c0c1192cb09af823e7e3e2709600cc50dcdab90c8f2f3c",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 25,
+      "seconds": 166,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "finalize",
+      "actor": "A_creator",
+      "method": "finalize",
+      "tx": "0x9659b62e10df0df6d60f3294a7d794c9c13056ee1645c0af057db85e5e91f334",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x9659b62e10df0df6d60f3294a7d794c9c13056ee1645c0af057db85e5e91f334",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 25,
+      "seconds": 5,
+      "final_status": "FINALIZED"
+    }
+  ],
+  "checks": [
+    {
+      "check": "work 30 registered from the tx's own return id (attempt 1)",
+      "pass": true,
+      "detail": {
+        "status": "REGISTERED",
+        "reason": ""
+      }
+    },
+    {
+      "check": "report 25 filed (attempt 1)",
+      "pass": true,
+      "detail": {
+        "status": "OPEN",
+        "reason": ""
+      }
+    },
+    {
+      "check": "expected verdict INCONCLUSIVE",
+      "pass": true,
+      "detail": {
+        "verdict": "INCONCLUSIVE"
+      }
+    },
+    {
+      "check": "round stored structured findings (source index + verbatim quote)",
+      "pass": true,
+      "detail": [
+        {
+          "fact": "The reported page reproduces text from the original poem, so it reuses the work.",
+          "quote": "The harbor lights are folding into rain,",
+          "source": 1,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/conflicting-credit.txt"
+        },
+        {
+          "fact": "The reported page includes a credit naming the creator.",
+          "quote": "Credit: poem by Mira Okafor.",
+          "source": 1,
+          "supports": "COMPLIANT",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/conflicting-credit.txt"
+        },
+        {
+          "fact": "The reported page also states that it is making no authorship claim, creating an internal conflict about attribution.",
+          "quote": "Until the dispute is settled this page makes no claim about who wrote the poem.",
+          "source": 1,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/conflicting-credit.txt"
+        },
+        {
+          "fact": "The license condition requires credit to Mira Okafor or a link to the original page.",
+          "quote": "You may share and adapt this poem for non-commercial purposes if you credit Mira Okafor and link to this page.",
+          "source": 0,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt?run=inconclusive-8069433"
+        }
+      ]
+    },
+    {
+      "check": "snapshots of original + reported page stored with sha256 and full text",
+      "pass": true,
+      "detail": [
+        [
+          "ORIGINAL WORK",
+          "961d61344df9",
+          593,
+          false
+        ],
+        [
+          "REPORTED PAGE",
+          "5849bf5cdfd2",
+          550,
+          false
+        ]
+      ]
+    },
+    {
+      "check": "report FINAL and bond settled per verdict",
+      "pass": true,
+      "detail": {
+        "verdict": "INCONCLUSIVE",
+        "delta": 0,
+        "reward": 0
+      }
+    },
+    {
+      "check": "outcome stored in the work's precedent registry",
+      "pass": true,
+      "detail": {
+        "violations": 0,
+        "compliant": 0,
+        "inconclusive": 1
+      }
+    },
+    {
+      "check": "points conserved: balances + escrow + pool == minted",
+      "pass": true,
+      "detail": {
+        "minted": 70000,
+        "balances": 68800,
+        "escrow": 900,
+        "pool": 300
+      }
+    }
+  ],
+  "verdicts": [
+    {
+      "report": 25,
+      "verdict": "INCONCLUSIVE",
+      "term_answer": "UNCLEAR",
+      "reuses_work": "YES",
+      "findings": [
+        {
+          "fact": "The reported page reproduces text from the original poem, so it reuses the work.",
+          "quote": "The harbor lights are folding into rain,",
+          "source": 1,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/conflicting-credit.txt"
+        },
+        {
+          "fact": "The reported page includes a credit naming the creator.",
+          "quote": "Credit: poem by Mira Okafor.",
+          "source": 1,
+          "supports": "COMPLIANT",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/conflicting-credit.txt"
+        },
+        {
+          "fact": "The reported page also states that it is making no authorship claim, creating an internal conflict about attribution.",
+          "quote": "Until the dispute is settled this page makes no claim about who wrote the poem.",
+          "source": 1,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/conflicting-credit.txt"
+        },
+        {
+          "fact": "The license condition requires credit to Mira Okafor or a link to the original page.",
+          "quote": "You may share and adapt this poem for non-commercial purposes if you credit Mira Okafor and link to this page.",
+          "source": 0,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt?run=inconclusive-8069433"
+        }
+      ],
+      "reasoning": "The reported page clearly reuses the original poem. However, the page both names Mira Okafor in a credit and later says it makes no claim about authorship, so the attribution status is conflicting and the term cannot be determined conclusively from the source text alone."
+    }
+  ],
+  "stats": {
+    "appeals": 7,
+    "balances": 68800,
+    "by_status": {
+      "APPEALED": 3,
+      "FINAL": 12,
+      "JUDGED": 2,
+      "OPEN": 7,
+      "REJECTED": 1,
+      "VOID": 1
+    },
+    "conserved": true,
+    "escrow": 900,
+    "minted": 70000,
+    "overturned": 0,
+    "pool": 300,
+    "registered": 23,
+    "reports": 26,
+    "users": 70,
+    "works": 31
+  },
+  "finishedAt": "2026-10-21T02:07:16.892Z",
+  "all_finalized": true,
+  "all_checks_pass": true
+}

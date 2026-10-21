@@ -124,15 +124,18 @@ if (name === "screens") {
     run.check(`appeal bond ${want}`, r.appeal_bond_outcome === want && (await bal(appellant)) === b0 - (want === "SPLIT" ? 50 : 100), { bond: r.appeal_bond_outcome });
   }
 } else if (name === "overturn") {
+  // First round: the page both credits the author and says the credit was withdrawn -> INCONCLUSIVE.
+  // The reporter appeals (only the reporter may appeal a non-violation) adding the editors' dispute log, which
+  // settles the conflict; round two can re-derive a directional verdict, so the first verdict is OVERTURNED.
   const wid = await work();
-  const id = await reportAndJudge(wid, PAGES.creditLinked, "ATTRIBUTION", "The zine page reproduces the first stanza of Harbor Lights and does not itself name Mira Okafor or link to the original, so attribution is missing.", { aw: 1800 });
+  const id = await reportAndJudge(wid, PAGES.conflicting, "ATTRIBUTION", "The moodboard page reproduces the first stanza of Harbor Lights and its credit to Mira Okafor has been withdrawn by an editor, so the page no longer credits the author.", { aw: 1800 });
   let r = await rep(id);
   const first = r.verdict;
   const appellant = first === "VIOLATION" ? C : B;
-  await run.write(`appeal by ${appellant.label} adding the zine's credits page (with #fragment)`, appellant, "appeal",
-    [id, "The zine page links directly to its credits page, and that linked credits page names Mira Okafor and links the original. A linked credits page is reasonable attribution, so the page credits the author.", PAGES.credits + "#issue-12"]);
+  await run.write(`appeal by ${appellant.label} adding the editors' dispute log (with #fragment)`, appellant, "appeal",
+    [id, "The editors' dispute log settles the conflict on the page: the withdrawal was void and the credit to Mira Okafor stands. Please decide on the settled facts.", PAGES.disputeLog + "#entry-15"]);
   r = await rep(id);
-  run.check("appeal exhibit stored canonically (fragment stripped) and snapshotted", r.appeal_evidence === PAGES.credits, r.appeal_evidence);
+  run.check("appeal exhibit stored canonically (fragment stripped) and snapshotted", r.appeal_evidence === PAGES.disputeLog, r.appeal_evidence);
   // A round whose validators cannot agree (UNDETERMINED) changes nothing on-chain; it can be retried before the deadline.
   for (let attempt = 1; attempt <= 3; attempt++) {
     await run.write(`rule_appeal (attempt ${attempt})`, A, "rule_appeal", [id]);
@@ -140,7 +143,7 @@ if (name === "screens") {
     if (r.status !== "APPEALED") break;
   }
   const rounds = await read("get_rounds", [id]);
-  run.check("appeal exhibit reached round two", rounds[1]?.sources?.includes(PAGES.credits), rounds[1]?.sources);
+  run.check("appeal exhibit reached round two", rounds[1]?.sources?.includes(PAGES.disputeLog), rounds[1]?.sources);
   run.check("expected scenario: verdict OVERTURNED with bond RETURNED", r.status === "FINAL" && r.appeal_result === "OVERTURNED" && r.appeal_bond_outcome === "RETURNED", { first, final: r.verdict, appeal: r.appeal_result });
 } else if (name === "overlap") {
   const wid = await work();
