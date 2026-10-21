@@ -1,0 +1,298 @@
+{
+  "scenario": "concurrent",
+  "network": "studionet",
+  "chainId": 61999,
+  "contract": "0x9e2885d91a1F9A426ceEd1580863840395CC109c",
+  "startedAt": "2026-10-21T01:48:40.357Z",
+  "actors": {
+    "A_creator": "0x871f3efE2741938058b6C42042052e5c4DFC109F",
+    "B_reporter": "0xfC46741E84443b2b437360147b63895E82465a61",
+    "C_accused": "0x526Fd0070027E3C2e2C0DC7159f01D449d1cd011",
+    "D": "0x278fFa6E8854ee1A2dd290033A41Ea5Fb323fBb3"
+  },
+  "steps": [
+    {
+      "step": "claim_points (A_creator)",
+      "actor": "A_creator",
+      "method": "claim_points",
+      "tx": "0x94be8673a3695fa33d0dfba87961e27b0162cfaf2eeb0cf5747ce0cd4ae00ad1",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x94be8673a3695fa33d0dfba87961e27b0162cfaf2eeb0cf5747ce0cd4ae00ad1",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 13,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (B_reporter)",
+      "actor": "B_reporter",
+      "method": "claim_points",
+      "tx": "0xd519576cea66588c9ce6abf2ab2dba1b9ce8453b2e5b184ae7ab0260f34be569",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xd519576cea66588c9ce6abf2ab2dba1b9ce8453b2e5b184ae7ab0260f34be569",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 5,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (C_accused)",
+      "actor": "C_accused",
+      "method": "claim_points",
+      "tx": "0x83b6046df0790a095d61678810cfa89b0fec50927b2f1717755c7778faea0778",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x83b6046df0790a095d61678810cfa89b0fec50927b2f1717755c7778faea0778",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 9,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (D)",
+      "actor": "D",
+      "method": "claim_points",
+      "tx": "0x42505c63be5ded4de9075c111f43ff8d59f7252281f7ee63bf5a7e6e2532c2f9",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x42505c63be5ded4de9075c111f43ff8d59f7252281f7ee63bf5a7e6e2532c2f9",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 30,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "concurrent register_work (A_creator)",
+      "actor": "A_creator",
+      "method": "register_work",
+      "tx": "0xca177b3217fa80a32fa18c061a565b4d9e1afd5a8b3758e623b482fedc5cf6fc",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xca177b3217fa80a32fa18c061a565b4d9e1afd5a8b3758e623b482fedc5cf6fc",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 22,
+      "seconds": 37,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "concurrent register_work (B_reporter)",
+      "actor": "B_reporter",
+      "method": "register_work",
+      "tx": "0x3146d215617402cae91b120ed4059d0b3a15852d65df804f601d0e9d32201635",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x3146d215617402cae91b120ed4059d0b3a15852d65df804f601d0e9d32201635",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 23,
+      "seconds": 49,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "concurrent register_work (C_accused)",
+      "actor": "C_accused",
+      "method": "register_work",
+      "tx": "0x7e9843926af8586ea064a221b1a549e4f88a6f544906c835572f503adf018bc5",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x7e9843926af8586ea064a221b1a549e4f88a6f544906c835572f503adf018bc5",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 24,
+      "seconds": 66,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "concurrent register_work (D)",
+      "actor": "D",
+      "method": "register_work",
+      "tx": "0x17b08b6c12e2e67e056e9b9bd1783c16697f0728a021a79d94a38a16e1bbb9fc",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x17b08b6c12e2e67e056e9b9bd1783c16697f0728a021a79d94a38a16e1bbb9fc",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 25,
+      "seconds": 119,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "concurrent file_report (A_creator)",
+      "actor": "A_creator",
+      "method": "file_report",
+      "tx": "0xeb56c65f5731ddc8603cbc11360de672324aab16df5933c68617ca527c98eef8",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xeb56c65f5731ddc8603cbc11360de672324aab16df5933c68617ca527c98eef8",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 18,
+      "seconds": 54,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "concurrent file_report (B_reporter)",
+      "actor": "B_reporter",
+      "method": "file_report",
+      "tx": "0x891edd83efd89e9db817b60da6eeedd9bac54d36b753a96b3ba6e97a73c604e8",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x891edd83efd89e9db817b60da6eeedd9bac54d36b753a96b3ba6e97a73c604e8",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 19,
+      "seconds": 70,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "concurrent file_report (C_accused)",
+      "actor": "C_accused",
+      "method": "file_report",
+      "tx": "0x023bbbe3ed3a09e38d90007265db1977934e52cd81b53641e9eb651837428c1c",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x023bbbe3ed3a09e38d90007265db1977934e52cd81b53641e9eb651837428c1c",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 20,
+      "seconds": 82,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "concurrent file_report (D)",
+      "actor": "D",
+      "method": "file_report",
+      "tx": "0xab8caff3f102de7e9cfbb9ac690fb700f2e684cdc293e407096a3c80acc74387",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xab8caff3f102de7e9cfbb9ac690fb700f2e684cdc293e407096a3c80acc74387",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 21,
+      "seconds": 119,
+      "final_status": "FINALIZED"
+    }
+  ],
+  "checks": [
+    {
+      "check": "every registration returned a distinct, fresh id",
+      "pass": true,
+      "detail": {
+        "before": 22,
+        "wids": [
+          22,
+          23,
+          24,
+          25
+        ]
+      }
+    },
+    {
+      "check": "wallet A_creator: returned work id 22 is its own",
+      "pass": true,
+      "detail": {
+        "status": "REJECTED"
+      }
+    },
+    {
+      "check": "wallet B_reporter: returned work id 23 is its own",
+      "pass": true,
+      "detail": {
+        "status": "REJECTED"
+      }
+    },
+    {
+      "check": "wallet C_accused: returned work id 24 is its own",
+      "pass": true,
+      "detail": {
+        "status": "REGISTERED"
+      }
+    },
+    {
+      "check": "wallet D: returned work id 25 is its own",
+      "pass": true,
+      "detail": {
+        "status": "REJECTED"
+      }
+    },
+    {
+      "check": "every report returned a distinct id",
+      "pass": true,
+      "detail": [
+        18,
+        19,
+        20,
+        21
+      ]
+    },
+    {
+      "check": "wallet A_creator: report 18 is its own and its newest",
+      "pass": true,
+      "detail": {
+        "status": "OPEN"
+      }
+    },
+    {
+      "check": "wallet B_reporter: report 19 is its own and its newest",
+      "pass": true,
+      "detail": {
+        "status": "OPEN"
+      }
+    },
+    {
+      "check": "wallet C_accused: report 20 is its own and its newest",
+      "pass": true,
+      "detail": {
+        "status": "OPEN"
+      }
+    },
+    {
+      "check": "wallet D: report 21 is its own and its newest",
+      "pass": true,
+      "detail": {
+        "status": "OPEN"
+      }
+    },
+    {
+      "check": "points conserved: balances + escrow + pool == minted",
+      "pass": true,
+      "detail": {
+        "minted": 62000,
+        "balances": 61000,
+        "escrow": 750,
+        "pool": 250
+      }
+    }
+  ],
+  "stats": {
+    "appeals": 5,
+    "balances": 61000,
+    "by_status": {
+      "APPEALED": 2,
+      "FINAL": 9,
+      "JUDGED": 3,
+      "OPEN": 6,
+      "REJECTED": 1,
+      "VOID": 1
+    },
+    "conserved": true,
+    "escrow": 750,
+    "minted": 62000,
+    "overturned": 0,
+    "pool": 250,
+    "registered": 18,
+    "reports": 22,
+    "users": 62,
+    "works": 26
+  },
+  "finishedAt": "2026-10-21T01:54:14.872Z",
+  "all_finalized": true,
+  "all_checks_pass": true
+}
