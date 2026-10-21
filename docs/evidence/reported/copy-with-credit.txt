@@ -1,0 +1,10 @@
+Quiet Shelf Reading Club - notes (fictional test fixture for LicenseCheck)
+
+Tonight we read "Harbor Lights" by Mira Okafor, shared under CC BY-NC 4.0. Original: https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt
+
+The harbor lights are folding into rain,
+the cranes stand still like herons made of iron,
+and every ferry carries home a name
+the tide forgot to write upon the shoreline.
+
+Credit: poem by Mira Okafor, used with attribution under its CC BY-NC 4.0 license. This club is free and non-commercial.

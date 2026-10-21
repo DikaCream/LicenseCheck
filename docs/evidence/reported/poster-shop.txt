@@ -1,0 +1,11 @@
+Seaside Prints Store (fictional test fixture for LicenseCheck)
+
+Product: "Harbor Lights" art poster, 50 x 70 cm. Price: 29 US dollars. Add to cart. Free shipping on orders over 60 dollars.
+
+Printed text on the poster:
+The harbor lights are folding into rain,
+the cranes stand still like herons made of iron,
+and every ferry carries home a name
+the tide forgot to write upon the shoreline.
+
+Poem by Mira Okafor (CC BY-NC 4.0). All sales are final.
