@@ -1,0 +1,16 @@
+{
+  "address": "0x9e2885d91a1F9A426ceEd1580863840395CC109c",
+  "rpc": "https://studio.genlayer.com/api",
+  "method": "genlayer-js getContractCode (gen_getContractCode)",
+  "deployed_sha256": "f997e624207aa24e8adc702165d4ac89192559990287e693e1c3d685939929a5",
+  "deployed_bytes": 58195,
+  "local_sha256": "f997e624207aa24e8adc702165d4ac89192559990287e693e1c3d685939929a5",
+  "local_matches_deployed": true,
+  "header_ok": true,
+  "deploy_tx": "0x8da3bf24024a1dae372e263d0154ddd7d0213256ddacf24f9828c1e418de5f46",
+  "verified_at": "2026-10-21T01:53:52.034Z",
+  "commit": "28ead3ac092302766002ee9db7b993575d37e2ae",
+  "commit_source_url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/28ead3ac092302766002ee9db7b993575d37e2ae/contracts/licensecheck.py",
+  "commit_sha256": "f997e624207aa24e8adc702165d4ac89192559990287e693e1c3d685939929a5",
+  "commit_matches_deployed": true
+}

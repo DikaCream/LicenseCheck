@@ -1,0 +1,266 @@
+{
+  "scenario": "violation",
+  "network": "studionet",
+  "chainId": 61999,
+  "contract": "0x9e2885d91a1F9A426ceEd1580863840395CC109c",
+  "startedAt": "2026-10-21T01:26:12.989Z",
+  "actors": {
+    "A_creator": "0x08b0123371975B717C537Cd713aad8887E89590D",
+    "B_reporter": "0x68395e9FeF70ff41f2A2dc6cd8864391CBB27f4f",
+    "C_accused": "0x22Bc2ccdBbbAfd02091852354809EC5D7c16B286"
+  },
+  "steps": [
+    {
+      "step": "claim_points (A_creator)",
+      "actor": "A_creator",
+      "method": "claim_points",
+      "tx": "0x0d60edc077380e0afd855d268d381ec5f527ce2eb9da09f34626626c4f3b4661",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x0d60edc077380e0afd855d268d381ec5f527ce2eb9da09f34626626c4f3b4661",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 129,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (B_reporter)",
+      "actor": "B_reporter",
+      "method": "claim_points",
+      "tx": "0x54059c5131440f719a59b6b3450b4deb41fdb6fb242f123d0d1b0aa51a19cf19",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x54059c5131440f719a59b6b3450b4deb41fdb6fb242f123d0d1b0aa51a19cf19",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 55,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (C_accused)",
+      "actor": "C_accused",
+      "method": "claim_points",
+      "tx": "0xb23a43872b66fbfc0b34532dc877a5b84163e59eb306acb4e26ca31b56d8b45b",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xb23a43872b66fbfc0b34532dc877a5b84163e59eb306acb4e26ca31b56d8b45b",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 253,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "register_work (violation-5973020)",
+      "actor": "A_creator",
+      "method": "register_work",
+      "tx": "0x8b97f9bec079fc3da6a7bda91804a1cd8e3988aab0dc52cbc2c682d15766a160",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x8b97f9bec079fc3da6a7bda91804a1cd8e3988aab0dc52cbc2c682d15766a160",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 13,
+      "seconds": 75,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "file_report ATTRIBUTION copy-no-credit.txt",
+      "actor": "B_reporter",
+      "method": "file_report",
+      "tx": "0xe9048e0fac9bc398ef3cc68c9e8b78dbc4b460e535ecec2879ff028dc4917c36",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xe9048e0fac9bc398ef3cc68c9e8b78dbc4b460e535ecec2879ff028dc4917c36",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 12,
+      "seconds": 133,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "judge (attempt 1)",
+      "actor": "A_creator",
+      "method": "judge",
+      "tx": "0xa107ed2499144410e8ce93c3c218eda6813735113bf855e4afa6db2f2d436e08",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xa107ed2499144410e8ce93c3c218eda6813735113bf855e4afa6db2f2d436e08",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 12,
+      "seconds": 179,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "finalize",
+      "actor": "A_creator",
+      "method": "finalize",
+      "tx": "0x3748da3327f11e5af44b2f67f4dbb42295c71987305bf79db0f1e119ece07afe",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x3748da3327f11e5af44b2f67f4dbb42295c71987305bf79db0f1e119ece07afe",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 12,
+      "seconds": 38,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "re-report of a URL with a final VIOLATION precedent reverts",
+      "actor": "C_accused",
+      "method": "file_report",
+      "tx": "0x621a402bf58eb6a4e80fa775549c86d41c0c74aa721e6ebf20b6e9b918d7c552",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x621a402bf58eb6a4e80fa775549c86d41c0c74aa721e6ebf20b6e9b918d7c552",
+      "status": "ACCEPTED",
+      "execution": "ERROR",
+      "ok": true,
+      "expected": "revert",
+      "returned_id": null,
+      "seconds": 29,
+      "final_status": "FINALIZED"
+    }
+  ],
+  "checks": [
+    {
+      "check": "work 13 registered from the tx's own return id (attempt 1)",
+      "pass": true,
+      "detail": {
+        "status": "REGISTERED",
+        "reason": ""
+      }
+    },
+    {
+      "check": "report 12 filed (attempt 1)",
+      "pass": true,
+      "detail": {
+        "status": "OPEN",
+        "reason": ""
+      }
+    },
+    {
+      "check": "expected verdict VIOLATION",
+      "pass": true,
+      "detail": {
+        "verdict": "VIOLATION"
+      }
+    },
+    {
+      "check": "round stored structured findings (source index + verbatim quote)",
+      "pass": true,
+      "detail": [
+        {
+          "fact": "Reported page reproduces the full poem text without any author name or link.",
+          "quote": "This week we share a poem that we love:",
+          "source": 1,
+          "supports": "VIOLATION",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/copy-no-credit.txt"
+        },
+        {
+          "fact": "Original requires attribution by name or link for any reuse.",
+          "quote": "You may share and adapt this poem for non-commercial purposes if you credit Mira Okafor and link to this page.",
+          "source": 0,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt?run=violation-5973020"
+        }
+      ]
+    },
+    {
+      "check": "snapshots of original + reported page stored with sha256 and full text",
+      "pass": true,
+      "detail": [
+        [
+          "ORIGINAL WORK",
+          "961d61344df9",
+          593,
+          false
+        ],
+        [
+          "REPORTED PAGE",
+          "4a2d88277897",
+          525,
+          false
+        ]
+      ]
+    },
+    {
+      "check": "report FINAL and bond settled per verdict",
+      "pass": true,
+      "detail": {
+        "verdict": "VIOLATION",
+        "delta": 25,
+        "reward": 25
+      }
+    },
+    {
+      "check": "outcome stored in the work's precedent registry",
+      "pass": true,
+      "detail": {
+        "violations": 1,
+        "compliant": 0,
+        "inconclusive": 0
+      }
+    },
+    {
+      "check": "points conserved: balances + escrow + pool == minted",
+      "pass": true,
+      "detail": {
+        "minted": 50000,
+        "balances": 49225,
+        "escrow": 650,
+        "pool": 125
+      }
+    }
+  ],
+  "verdicts": [
+    {
+      "report": 12,
+      "verdict": "VIOLATION",
+      "term_answer": "NO",
+      "reuses_work": "YES",
+      "findings": [
+        {
+          "fact": "Reported page reproduces the full poem text without any author name or link.",
+          "quote": "This week we share a poem that we love:",
+          "source": 1,
+          "supports": "VIOLATION",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/copy-no-credit.txt"
+        },
+        {
+          "fact": "Original requires attribution by name or link for any reuse.",
+          "quote": "You may share and adapt this poem for non-commercial purposes if you credit Mira Okafor and link to this page.",
+          "source": 0,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt?run=violation-5973020"
+        }
+      ],
+      "reasoning": "The reported page reuses the complete poem text from the original. It provides no credit to Mira Okafor or link, directly violating the attribution term."
+    }
+  ],
+  "stats": {
+    "appeals": 4,
+    "balances": 49225,
+    "by_status": {
+      "APPEALED": 3,
+      "FINAL": 6,
+      "JUDGED": 0,
+      "OPEN": 4,
+      "REJECTED": 1,
+      "VOID": 1
+    },
+    "conserved": true,
+    "escrow": 650,
+    "minted": 50000,
+    "overturned": 0,
+    "pool": 125,
+    "registered": 14,
+    "reports": 15,
+    "users": 50,
+    "works": 19
+  },
+  "finishedAt": "2026-10-21T01:42:08.667Z",
+  "all_finalized": true,
+  "all_checks_pass": true
+}
