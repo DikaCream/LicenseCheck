@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+/* LicenseCheck: an archival card catalogue. Mount-board backdrop, library index cards (red head rule, blue ruled
+   lines, punched hole), rubber-stamped license badges, museum specimen labels, iron-gall and Prussian inks. */
+@theme {
+  --font-display: var(--font-bodoni), "Didot", Georgia, serif;
+  --font-serif: var(--font-sourceserif), Georgia, serif;
+  --font-mono: var(--font-plexmono), "Courier New", monospace;
+  --font-narrow: var(--font-archivo), "Arial Narrow", sans-serif;
+  --color-board: #d9d7cc;
+  --color-board-2: #c8c5b6;
+  --color-card: #fbf7ea;
+  --color-card-2: #f3edd9;
+  --color-ink: #2a2320;
+  --color-ink-2: #6a5f55;
+  --color-ruled: #a9bfdc;
+  --color-headrule: #c8473b;
+  --color-oxblood: #8c1c13;
+  --color-prussian: #1f3a5f;
+  --color-verdigris: #2f6b5e;
+  --color-ochre: #9a6a12;
+  --color-violet: #5a3d73;
+}
+
+html { background: var(--color-board); }
+body {
+  min-height: 100vh;
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  font-size: 16.5px;
+  line-height: 1.55;
+  background-color: var(--color-board);
+  background-image:
+    linear-gradient(rgba(42, 35, 32, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(42, 35, 32, 0.045) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.mono { font-family: var(--font-mono); }
+.narrow { font-family: var(--font-narrow); }
+.tag { font-family: var(--font-narrow); font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-ink-2); }
+
+/* Library index card: red head rule, blue ruled lines, punched hole at the bottom */
+.card {
+  position: relative;
+  background-color: var(--color-card);
+  background-image:
+    linear-gradient(to bottom, transparent 46px, var(--color-headrule) 46px, var(--color-headrule) 47.5px, transparent 47.5px),
+    repeating-linear-gradient(to bottom, transparent 0 25px, rgba(169, 191, 220, 0.55) 25px 26px);
+  background-position: 0 0, 0 48px;
+  background-repeat: no-repeat, repeat;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 #fff inset, 0 1px 2px rgba(0, 0, 0, 0.12), 0 8px 18px -10px rgba(42, 35, 32, 0.45);
+  padding: 14px 22px 34px;
+}
+.card::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 9px;
+  width: 14px;
+  height: 14px;
+  margin-left: -7px;
+  border-radius: 999px;
+  background: var(--color-board);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+.card-plain { background-image: none; padding-bottom: 18px; }
+.card-plain::after { display: none; }
+a.card { transition: transform 0.15s ease, box-shadow 0.15s ease; }
+a.card:hover { transform: translateY(-3px) rotate(-0.25deg); box-shadow: 0 1px 0 #fff inset, 0 14px 26px -12px rgba(42, 35, 32, 0.55); }
+
+/* The catalogue drawer: brass label holder */
+.drawer {
+  background: linear-gradient(#5b3b25, #4a2f1d);
+  border-radius: 6px;
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.12), inset 0 -3px 0 rgba(0, 0, 0, 0.25), 0 12px 24px -14px #000;
+}
+.brass {
+  background: linear-gradient(180deg, #e8cf8b, #b48a3c 55%, #8f6a26);
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 1px 1px rgba(0, 0, 0, 0.4);
+}
+.brass-slot { background: var(--color-card); box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.35); }
+
+/* Museum specimen label */
+.specimen {
+  border: 1.5px solid var(--color-ink);
+  outline: 1px solid var(--color-ink);
+  outline-offset: 3px;
+  background: #fffdf6;
+  padding: 10px 14px;
+}
+
+/* Rubber stamps (license badges, verdicts) */
+.stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  font-family: var(--font-narrow);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  border: 2px solid currentColor;
+  border-radius: 6px;
+  padding: 0.12em 0.55em;
+  transform: rotate(-2.5deg);
+  mix-blend-mode: multiply;
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='60'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='2'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.2 1.7'/></filter><rect width='100%' height='100%' filter='url(%23g)'/></svg>");
+  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='60'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='2'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.2 1.7'/></filter><rect width='100%' height='100%' filter='url(%23g)'/></svg>");
+}
+.stamp-sm { font-size: 11px; }
+.stamp-lg { font-size: 22px; border-width: 3px; padding: 0.15em 0.6em; transform: rotate(-4deg); }
+.stamp-round { border-radius: 999px; padding: 0.3em 0.8em; }
+@keyframes thump { 0% { transform: scale(1.6) rotate(-10deg); opacity: 0; } 70% { transform: scale(0.96) rotate(-4deg); opacity: 1; } 100% { transform: scale(1) rotate(-4deg); } }
+.stamp-anim { animation: thump 0.35s ease-out both; }
+
+/* Inputs typed onto the card */
+.field {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 1.5px solid var(--color-ruled);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  padding: 6px 2px;
+  color: var(--color-ink);
+}
+.field:focus { outline: none; border-bottom-color: var(--color-prussian); background: rgba(169, 191, 220, 0.12); }
+textarea.field { border: 1.5px solid var(--color-ruled); border-radius: 2px; padding: 8px; line-height: 1.5; }
+select.field { cursor: pointer; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-family: var(--font-narrow);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 13px;
+  padding: 0.6em 1.1em;
+  background: var(--color-prussian);
+  color: var(--color-card);
+  border-radius: 3px;
+  box-shadow: 0 2px 0 #10223a;
+  transition: transform 0.08s ease;
+}
+.btn:hover:not(:disabled) { transform: translateY(-1px); }
+.btn:active:not(:disabled) { transform: translateY(1px); box-shadow: none; }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn-ox { background: var(--color-oxblood); box-shadow: 0 2px 0 #50100b; }
+.btn-ghost { background: transparent; color: var(--color-ink); border: 1.5px solid var(--color-ink); box-shadow: none; }
+
+.ink-link { color: var(--color-prussian); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.ink-link:hover { color: var(--color-oxblood); }
+
+.quote-slip {
+  border-left: 3px solid var(--color-oxblood);
+  background: #fffdf3;
+  padding: 8px 12px;
+  font-style: italic;
+}
+.tab-divider {
+  display: inline-block;
+  background: var(--color-card-2);
+  border: 1px solid var(--color-board-2);
+  border-bottom: 0;
+  border-radius: 8px 8px 0 0;
+  padding: 3px 14px;
+}
