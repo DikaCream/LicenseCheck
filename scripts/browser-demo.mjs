@@ -61,6 +61,7 @@ async function session(label, pk) {
     window.ethereum = { isMetaMask: true, request: ({ method, params }) => window.__lcWallet(method, params ?? []), on() {}, removeListener() {} };
   });
   page.on("pageerror", (e) => console.log(`[${label}] pageerror`, String(e).slice(0, 160)));
+  page.on("console", (m) => { if (m.type() === "error" || m.type() === "warning") console.log(`[${label}] console.${m.type()}`, m.text().slice(0, 200)); });
   return { label, page, ctx, address: handler && doc.wallets[label] };
 }
 const shot = (s, name) => s.page.screenshot({ path: new URL(`../docs/demo-${name}.png`, import.meta.url).pathname, fullPage: false }).catch(() => {});
@@ -69,6 +70,7 @@ const shot = (s, name) => s.page.screenshot({ path: new URL(`../docs/demo-${name
 async function uiAction(s, label, trigger) {
   const t = Date.now();
   await trigger();
+  const spy = setInterval(async () => { const txt = await s.page.locator('[data-testid="clerk-log"]').first().textContent({ timeout: 2000 }).catch(() => "(no clerk log)"); console.log(`  [${label}] ${Math.round((Date.now() - t) / 1000)}s: ${String(txt).replace(/\s+/g, " ").slice(0, 220)}`); }, 60_000);
   const log = s.page.locator('[data-testid="clerk-log"]').first();
   await log.waitFor({ timeout: 60_000 });
   const outcome = await s.page.waitForFunction(() => {
@@ -78,6 +80,7 @@ async function uiAction(s, label, trigger) {
     if (/Rejected:|Validators could not agree|not on-chain|Not finalized yet/.test(txt)) return "FAIL: " + txt.slice(0, 300);
     return false;
   }, null, { timeout: 25 * 60_000, polling: 3000 }).then((h) => h.jsonValue());
+  clearInterval(spy);
   const href = await log.locator('a[href*="/transactions/"]').first().getAttribute("href").catch(() => null);
   const hash = href ? href.split("/transactions/")[1] : null;
   const step = { step: label, actor: s.label, tx_from_ui: hash, explorer: hash ? EXPLORER + hash : null, ui_outcome: outcome, seconds: Math.round((Date.now() - t) / 1000) };
@@ -113,6 +116,7 @@ try {
   await A.page.getByPlaceholder("Harbor Lights, a poem by Mira Okafor").fill(TITLE);
   await A.page.getByPlaceholder("https://…").first().fill(`${ORIGINAL}?run=${tag}`);
   await shot(A, "02-register");
+  console.log("register button enabled:", await A.page.getByRole("button", { name: /File this card/ }).isEnabled());
   await uiAction(A, "register work", () => A.page.getByRole("button", { name: /File this card/ }).click());
   await A.page.waitForURL(/\/work\/\d+/, { timeout: 60_000 });
   const wid = Number(A.page.url().match(/\/work\/(\d+)/)[1]);

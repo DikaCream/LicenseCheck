@@ -1,0 +1,228 @@
+{
+  "scenario": "overturn",
+  "network": "studionet",
+  "chainId": 61999,
+  "contract": "0x9e2885d91a1F9A426ceEd1580863840395CC109c",
+  "startedAt": "2026-10-21T01:16:54.354Z",
+  "actors": {
+    "A_creator": "0x57354AfA4f0D5b91D7147489F895682269FadF87",
+    "B_reporter": "0x09EEa452486C404d3bB1Ad27A384612Cc5DFD9C1",
+    "C_accused": "0x18Fb768d5F14DAfDA186c6546eF1A913b53aD457"
+  },
+  "steps": [
+    {
+      "step": "claim_points (A_creator)",
+      "actor": "A_creator",
+      "method": "claim_points",
+      "tx": "0x47b4af0ff9aea0999a19ff9af3cb4c6bbc68d80b383dac0027c068dcc96ba95a",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x47b4af0ff9aea0999a19ff9af3cb4c6bbc68d80b383dac0027c068dcc96ba95a",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 21,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (B_reporter)",
+      "actor": "B_reporter",
+      "method": "claim_points",
+      "tx": "0x51c7a88a7a67a172c1627c8bec8235eb505534222a514e750f728e92a41efa86",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x51c7a88a7a67a172c1627c8bec8235eb505534222a514e750f728e92a41efa86",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 42,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (C_accused)",
+      "actor": "C_accused",
+      "method": "claim_points",
+      "tx": "0x709c3885ad83db9d36f2a48705658ba963badbf9948c7e0f1afc1286bc84d977",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x709c3885ad83db9d36f2a48705658ba963badbf9948c7e0f1afc1286bc84d977",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 29,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "register_work (overturn-5414384)",
+      "actor": "A_creator",
+      "method": "register_work",
+      "tx": "0x0954037767dbdbd1dd6d3c6876e95d826cb176a44342e29a54bead631e188a5c",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x0954037767dbdbd1dd6d3c6876e95d826cb176a44342e29a54bead631e188a5c",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 6,
+      "seconds": 116,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "file_report ATTRIBUTION credit-elsewhere.txt",
+      "actor": "B_reporter",
+      "method": "file_report",
+      "tx": "0x2a58be940f29a0b643689c32599f0e5ae586b7e6300bfa0a4a2c1d71be0fcf62",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x2a58be940f29a0b643689c32599f0e5ae586b7e6300bfa0a4a2c1d71be0fcf62",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 5,
+      "seconds": 186,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "judge (attempt 1)",
+      "actor": "A_creator",
+      "method": "judge",
+      "tx": "0x60e6e4e693230b5d6fb225a99404aca4d73b7f7cbc1751a76ff8d3747724bad0",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x60e6e4e693230b5d6fb225a99404aca4d73b7f7cbc1751a76ff8d3747724bad0",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 5,
+      "seconds": 253,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "appeal by C_accused adding the zine's credits page (with #fragment)",
+      "actor": "C_accused",
+      "method": "appeal",
+      "tx": "0x003a84bee34cff3b3a1e2e39630f24662d311cc31fd808a2f2756c956e156c2c",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x003a84bee34cff3b3a1e2e39630f24662d311cc31fd808a2f2756c956e156c2c",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 5,
+      "seconds": 46,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "rule_appeal",
+      "actor": "A_creator",
+      "method": "rule_appeal",
+      "tx": "0xbf8c3107afb977a29b2d370f55fac20f919183e70661ae78e59a9ef5e0cdc1da",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xbf8c3107afb977a29b2d370f55fac20f919183e70661ae78e59a9ef5e0cdc1da",
+      "status": "UNDETERMINED",
+      "execution": "SUCCESS",
+      "ok": false,
+      "expected": "success",
+      "returned_id": 5,
+      "seconds": 274,
+      "final_status": "FINALIZED"
+    }
+  ],
+  "checks": [
+    {
+      "check": "work 6 registered from the tx's own return id (attempt 1)",
+      "pass": true,
+      "detail": {
+        "status": "REGISTERED",
+        "reason": ""
+      }
+    },
+    {
+      "check": "report 5 filed (attempt 1)",
+      "pass": true,
+      "detail": {
+        "status": "OPEN",
+        "reason": ""
+      }
+    },
+    {
+      "check": "appeal exhibit stored canonically (fragment stripped) and snapshotted",
+      "pass": true,
+      "detail": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/appeal/lantern-credits.txt"
+    },
+    {
+      "check": "appeal exhibit reached round two",
+      "pass": false
+    },
+    {
+      "check": "expected scenario: verdict OVERTURNED with bond RETURNED",
+      "pass": false,
+      "detail": {
+        "first": "VIOLATION",
+        "final": "VIOLATION",
+        "appeal": ""
+      }
+    },
+    {
+      "check": "points conserved: balances + escrow + pool == minted",
+      "pass": true,
+      "detail": {
+        "minted": 37000,
+        "balances": 36650,
+        "escrow": 200,
+        "pool": 150
+      }
+    }
+  ],
+  "verdicts": [
+    {
+      "report": 5,
+      "verdict": "VIOLATION",
+      "term_answer": "NO",
+      "reuses_work": "YES",
+      "findings": [
+        {
+          "fact": "The reported page reproduces the first stanza of the original poem verbatim.",
+          "quote": "The harbor lights are folding into rain,",
+          "source": 1,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/credit-elsewhere.txt"
+        },
+        {
+          "fact": "The reported page contains no name of Mira Okafor and no link to the original work on this page; attribution is deferred to a separate page not provided as evidence.",
+          "quote": "Author credits for every text in this issue are printed on our separate credits page.",
+          "source": 1,
+          "supports": "VIOLATION",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/credit-elsewhere.txt"
+        },
+        {
+          "fact": "The license requires crediting Mira Okafor and linking to the original page as a condition of reuse.",
+          "quote": "You may share and adapt this poem for non-commercial purposes if you credit Mira Okafor and link to this page.",
+          "source": 0,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt?run=overturn-5414384"
+        }
+      ],
+      "reasoning": "The reported page reproduces the first stanza of Harbor Lights verbatim but provides neither the creator's name (Mira Okafor) nor a link to the original work on the same page. Deferring credits to a separate, unevidenced page does not satisfy the attribution requirement as stated in the license."
+    }
+  ],
+  "stats": {
+    "appeals": 2,
+    "balances": 36650,
+    "by_status": {
+      "APPEALED": 1,
+      "FINAL": 5,
+      "JUDGED": 0,
+      "OPEN": 1,
+      "REJECTED": 1,
+      "VOID": 0
+    },
+    "conserved": true,
+    "escrow": 200,
+    "minted": 37000,
+    "overturned": 0,
+    "pool": 150,
+    "registered": 8,
+    "reports": 8,
+    "users": 37,
+    "works": 9
+  },
+  "finishedAt": "2026-10-21T01:33:47.594Z",
+  "all_finalized": true,
+  "all_checks_pass": false
+}

@@ -1,0 +1,240 @@
+{
+  "scenario": "overturn",
+  "network": "studionet",
+  "chainId": 61999,
+  "contract": "0x9e2885d91a1F9A426ceEd1580863840395CC109c",
+  "startedAt": "2026-10-21T02:15:03.037Z",
+  "actors": {
+    "A_creator": "0x7636293e1DE3699d8b02E72642073406dBed6Fa2",
+    "B_reporter": "0xE6EB3E2E6B8e699597099A2B66304FFc286111d0",
+    "C_accused": "0xC2F1579474959C5F465b070d765eC862d007b722"
+  },
+  "steps": [
+    {
+      "step": "claim_points (A_creator)",
+      "actor": "A_creator",
+      "method": "claim_points",
+      "tx": "0x2296f9ceeeddf1133dcf1f532d368ea1f5eda9afdbed21cfcc071de815c84214",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x2296f9ceeeddf1133dcf1f532d368ea1f5eda9afdbed21cfcc071de815c84214",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 5,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (B_reporter)",
+      "actor": "B_reporter",
+      "method": "claim_points",
+      "tx": "0x2a285e1bfe714f31eacb592f96c34e3bcbc80befad9142238381cf51584732b5",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x2a285e1bfe714f31eacb592f96c34e3bcbc80befad9142238381cf51584732b5",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 5,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (C_accused)",
+      "actor": "C_accused",
+      "method": "claim_points",
+      "tx": "0xae3831f3988b1f001d66671dc150e7ef5bc111979d7d7ae5294e3bd1054d260c",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xae3831f3988b1f001d66671dc150e7ef5bc111979d7d7ae5294e3bd1054d260c",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 9,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "register_work (overturn-8903105)",
+      "actor": "A_creator",
+      "method": "register_work",
+      "tx": "0x1408c66ca5a774a5d102c59e2481c79a7bd77ddc2c0995fb554799578758ce5a",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x1408c66ca5a774a5d102c59e2481c79a7bd77ddc2c0995fb554799578758ce5a",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 33,
+      "seconds": 17,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "file_report ATTRIBUTION conflicting-credit.txt",
+      "actor": "B_reporter",
+      "method": "file_report",
+      "tx": "0x4cad3e4173510b8037af17122ab6df1484f7bd4510860a7f7ea9932e64d4b428",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x4cad3e4173510b8037af17122ab6df1484f7bd4510860a7f7ea9932e64d4b428",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 27,
+      "seconds": 13,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "judge (attempt 1)",
+      "actor": "A_creator",
+      "method": "judge",
+      "tx": "0xeb30791ae512fb77ceeb595bf1d3e1a42aa48f5328f546523fdc277fa3a1ec17",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xeb30791ae512fb77ceeb595bf1d3e1a42aa48f5328f546523fdc277fa3a1ec17",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 27,
+      "seconds": 50,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "appeal by B_reporter adding the editors' dispute log (with #fragment)",
+      "actor": "B_reporter",
+      "method": "appeal",
+      "tx": "0x3e49afb10430e64ac9714d7da9e493095aaa17093c222e6511e541b57963d533",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x3e49afb10430e64ac9714d7da9e493095aaa17093c222e6511e541b57963d533",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 27,
+      "seconds": 9,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "rule_appeal (attempt 1)",
+      "actor": "A_creator",
+      "method": "rule_appeal",
+      "tx": "0xe86b411b00d12bda71dadedef70d71d80fcd0d3cc0ebe4a167abd7ef5bcd160c",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xe86b411b00d12bda71dadedef70d71d80fcd0d3cc0ebe4a167abd7ef5bcd160c",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 27,
+      "seconds": 17,
+      "final_status": "FINALIZED"
+    }
+  ],
+  "checks": [
+    {
+      "check": "work 33 registered from the tx's own return id (attempt 1)",
+      "pass": true,
+      "detail": {
+        "status": "REGISTERED",
+        "reason": ""
+      }
+    },
+    {
+      "check": "report 27 filed (attempt 1)",
+      "pass": true,
+      "detail": {
+        "status": "OPEN",
+        "reason": ""
+      }
+    },
+    {
+      "check": "appeal exhibit stored canonically (fragment stripped) and snapshotted",
+      "pass": true,
+      "detail": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/appeal/moodboard-dispute-log.txt"
+    },
+    {
+      "check": "appeal exhibit reached round two",
+      "pass": true,
+      "detail": [
+        "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt?run=overturn-8903105",
+        "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/conflicting-credit.txt",
+        "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/appeal/moodboard-dispute-log.txt"
+      ]
+    },
+    {
+      "check": "expected scenario: verdict OVERTURNED with bond RETURNED",
+      "pass": true,
+      "detail": {
+        "first": "COMPLIANT",
+        "final": "INCONCLUSIVE",
+        "appeal": "OVERTURNED"
+      }
+    },
+    {
+      "check": "points conserved: balances + escrow + pool == minted",
+      "pass": true,
+      "detail": {
+        "minted": 76000,
+        "balances": 74850,
+        "escrow": 600,
+        "pool": 550
+      }
+    }
+  ],
+  "verdicts": [
+    {
+      "report": 27,
+      "verdict": "COMPLIANT",
+      "term_answer": "YES",
+      "reuses_work": "YES",
+      "findings": [
+        {
+          "fact": "The reported page explicitly credits the poem to Mira Okafor.",
+          "quote": "Credit: poem by Mira Okafor.",
+          "source": 1,
+          "supports": "COMPLIANT",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/conflicting-credit.txt"
+        },
+        {
+          "fact": "The reported page reproduces text from the original poem, so it reuses the work.",
+          "quote": "The harbor lights are folding into rain,",
+          "source": 1,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/conflicting-credit.txt"
+        },
+        {
+          "fact": "The license condition requires credit to Mira Okafor or a link to the original page.",
+          "quote": "You may share and adapt this poem for non-commercial purposes if you credit Mira Okafor and link to this page.",
+          "source": 0,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt?run=overturn-8903105"
+        },
+        {
+          "fact": "A later note disputes authorship, but the page still contains an explicit credit line naming Mira Okafor.",
+          "quote": "Until the dispute is settled this page makes no claim about who wrote the poem.",
+          "source": 1,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/conflicting-credit.txt"
+        }
+      ],
+      "reasoning": "The reported page reuses the poem by reproducing its first stanza. It still contains a credit line naming Mira Okafor, so the attribution term is satisfied on the face of the page."
+    }
+  ],
+  "stats": {
+    "appeals": 9,
+    "balances": 74850,
+    "by_status": {
+      "APPEALED": 1,
+      "FINAL": 16,
+      "JUDGED": 2,
+      "OPEN": 7,
+      "REJECTED": 1,
+      "VOID": 1
+    },
+    "conserved": true,
+    "escrow": 600,
+    "minted": 76000,
+    "overturned": 1,
+    "pool": 550,
+    "registered": 26,
+    "reports": 28,
+    "users": 76,
+    "works": 34
+  },
+  "finishedAt": "2026-10-21T02:17:51.869Z",
+  "all_finalized": true,
+  "all_checks_pass": true
+}
