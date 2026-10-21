@@ -1,8 +1,8 @@
-Harbor Notes blog (fictional test fixture for LicenseCheck, version A)
+Harbor Notes blog (fictional test fixture for LicenseCheck, version B)
 
 The harbor lights are folding into rain,
 the cranes stand still like herons made of iron,
 and every ferry carries home a name
 the tide forgot to write upon the shoreline.
 
-Written by the Harbor Notes team.
+Poem "Harbor Lights" by Mira Okafor, shared under CC BY 4.0. Edited after the report was filed.
