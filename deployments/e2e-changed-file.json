@@ -1,0 +1,137 @@
+{
+  "scenario": "changed-file",
+  "network": "studionet",
+  "chainId": 61999,
+  "contract": "0x9e2885d91a1F9A426ceEd1580863840395CC109c",
+  "startedAt": "2026-10-21T01:16:57.352Z",
+  "actors": {
+    "A_creator": "0x86264C6D2957236205cF87f175813611Ee695633",
+    "B_reporter": "0xDCae8fbC58018DbbD0B725A48c90d37B2fC64751",
+    "C_accused": "0x81d494db53E7D439EEA745BE3e88021E1d743f0B"
+  },
+  "steps": [
+    {
+      "step": "claim_points (A_creator)",
+      "actor": "A_creator",
+      "method": "claim_points",
+      "tx": "0xed6f29dc77b7e259248040af358c3a703a3c6015aa171d31251ae760d3ccabec",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xed6f29dc77b7e259248040af358c3a703a3c6015aa171d31251ae760d3ccabec",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 25,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (B_reporter)",
+      "actor": "B_reporter",
+      "method": "claim_points",
+      "tx": "0xd7b2f29a9f3c3f2d2bb4fd4ee6876918badee4b62723fb5e9d45aea93d36b2f0",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xd7b2f29a9f3c3f2d2bb4fd4ee6876918badee4b62723fb5e9d45aea93d36b2f0",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 42,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (C_accused)",
+      "actor": "C_accused",
+      "method": "claim_points",
+      "tx": "0xded350e2bc6e892a16b0c78a03ccee80d5fc4f4f160f2473dc76bc4e55408368",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xded350e2bc6e892a16b0c78a03ccee80d5fc4f4f160f2473dc76bc4e55408368",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 29,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "register_work (changed-file-5417380)",
+      "actor": "A_creator",
+      "method": "register_work",
+      "tx": "0x4c1d8f6aafda1aa5ae44226bdbf4bbf0bae753892b13d099d34848a2bd6f36e3",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x4c1d8f6aafda1aa5ae44226bdbf4bbf0bae753892b13d099d34848a2bd6f36e3",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 7,
+      "seconds": 120,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "file_report ATTRIBUTION page.txt",
+      "actor": "B_reporter",
+      "method": "file_report",
+      "tx": "0x1d90e10155fc034a00d48e1c42f32cc3c6cb155d0d343d532a33b2e94c09c425",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x1d90e10155fc034a00d48e1c42f32cc3c6cb155d0d343d532a33b2e94c09c425",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 6,
+      "seconds": 204,
+      "final_status": "FINALIZED"
+    }
+  ],
+  "checks": [
+    {
+      "check": "work 7 registered from the tx's own return id (attempt 1)",
+      "pass": true,
+      "detail": {
+        "status": "REGISTERED",
+        "reason": ""
+      }
+    },
+    {
+      "check": "report filed with a snapshot of version A",
+      "pass": true,
+      "detail": {
+        "chars": 275,
+        "sha256": "4717911767783ffa52e947f4d9ec8fd17b71d27493fe9dd360c149c70a71a685",
+        "truncated": false
+      }
+    },
+    {
+      "check": "points conserved: balances + escrow + pool == minted",
+      "pass": true,
+      "detail": {
+        "minted": 24000,
+        "balances": 23700,
+        "escrow": 300,
+        "pool": 0
+      }
+    }
+  ],
+  "stats": {
+    "appeals": 0,
+    "balances": 23700,
+    "by_status": {
+      "APPEALED": 0,
+      "FINAL": 1,
+      "JUDGED": 0,
+      "OPEN": 6,
+      "REJECTED": 0,
+      "VOID": 0
+    },
+    "conserved": true,
+    "escrow": 300,
+    "minted": 24000,
+    "overturned": 0,
+    "pool": 0,
+    "registered": 8,
+    "reports": 7,
+    "users": 24,
+    "works": 9
+  },
+  "finishedAt": "2026-10-21T01:25:21.586Z",
+  "all_finalized": true,
+  "all_checks_pass": true
+}

@@ -1,0 +1,206 @@
+{
+  "scenario": "overlap",
+  "network": "studionet",
+  "chainId": 61999,
+  "contract": "0x9e2885d91a1F9A426ceEd1580863840395CC109c",
+  "startedAt": "2026-10-21T01:26:06.982Z",
+  "actors": {
+    "A_creator": "0x3F31793aCB0AA58276246A6eB03990339D8924BE",
+    "B_reporter": "0x0F0EcB51c7db200E3F75fA91B809241Af129A68E",
+    "C_accused": "0x36754c9Aa78295B62eb33c77a44653209e42AA76"
+  },
+  "steps": [
+    {
+      "step": "claim_points (A_creator)",
+      "actor": "A_creator",
+      "method": "claim_points",
+      "tx": "0xa45b69475cb7295bc37d6c36b5d401f9c9e9c1cc62a29e48e8a514422dd1b524",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xa45b69475cb7295bc37d6c36b5d401f9c9e9c1cc62a29e48e8a514422dd1b524",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 125,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (B_reporter)",
+      "actor": "B_reporter",
+      "method": "claim_points",
+      "tx": "0xbee12becde10c7e774e895a72090fa20604670a9e9824d5847e5159a5a4d42cc",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xbee12becde10c7e774e895a72090fa20604670a9e9824d5847e5159a5a4d42cc",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 50,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (C_accused)",
+      "actor": "C_accused",
+      "method": "claim_points",
+      "tx": "0x0b6e0799d71eb61dfd4d8f472d5f00490540fcdc3080f311a02f42c8aba4d8c5",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x0b6e0799d71eb61dfd4d8f472d5f00490540fcdc3080f311a02f42c8aba4d8c5",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 261,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "register_work (overlap-5967011)",
+      "actor": "A_creator",
+      "method": "register_work",
+      "tx": "0x79174625f1369b3fdac3d48e70d3f6e3aa32d28b2538f150ab7b62462e7b2fec",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x79174625f1369b3fdac3d48e70d3f6e3aa32d28b2538f150ab7b62462e7b2fec",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 11,
+      "seconds": 42,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "file_report ATTRIBUTION copy-no-credit.txt",
+      "actor": "B_reporter",
+      "method": "file_report",
+      "tx": "0xb04731e438d45c2131fcacd71cc79763ba5e2990796b1da245f2cd49e2703937",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xb04731e438d45c2131fcacd71cc79763ba5e2990796b1da245f2cd49e2703937",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 10,
+      "seconds": 71,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "same URL with host case + #fragment is the SAME key: reverts",
+      "actor": "C_accused",
+      "method": "file_report",
+      "tx": "0xd5227df949e7112eb46df6ee223c1bcdf40921032ee4039cc296517c426c1424",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xd5227df949e7112eb46df6ee223c1bcdf40921032ee4039cc296517c426c1424",
+      "status": "ACCEPTED",
+      "execution": "ERROR",
+      "ok": true,
+      "expected": "revert",
+      "returned_id": null,
+      "seconds": 149,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "overlapping path copy-no-credit-2.txt is a distinct report",
+      "actor": "C_accused",
+      "method": "file_report",
+      "tx": "0x28cab5765f29f9970b5c3958463215702c31dec2646849d429a0c2b19f23d6cf",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x28cab5765f29f9970b5c3958463215702c31dec2646849d429a0c2b19f23d6cf",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 13,
+      "seconds": 170,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "?query variant is a distinct report",
+      "actor": "C_accused",
+      "method": "file_report",
+      "tx": "0x4b0f18b33fbfb847e8525fe1c22e25918c94eb05206bf9c256788e20ec160ab4",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x4b0f18b33fbfb847e8525fe1c22e25918c94eb05206bf9c256788e20ec160ab4",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 14,
+      "seconds": 29,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "judge overlapping-path report",
+      "actor": "A_creator",
+      "method": "judge",
+      "tx": "0xac38d254034e50afcdbf624af5749f8f58bd1227f1ed21cd2715df40e843e4ea",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xac38d254034e50afcdbf624af5749f8f58bd1227f1ed21cd2715df40e843e4ea",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 13,
+      "seconds": 33,
+      "final_status": "FINALIZED"
+    }
+  ],
+  "checks": [
+    {
+      "check": "work 11 registered from the tx's own return id (attempt 1)",
+      "pass": true,
+      "detail": {
+        "status": "REGISTERED",
+        "reason": ""
+      }
+    },
+    {
+      "check": "three distinct reports with exact canonical URLs",
+      "pass": true,
+      "detail": [
+        "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/copy-no-credit.txt",
+        "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/copy-no-credit-2.txt",
+        "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/copy-no-credit.txt?edition=print"
+      ]
+    },
+    {
+      "check": "overlapping path snapshot holds ITS OWN page (second edition), not the shorter URL's",
+      "pass": true,
+      "detail": "Driftwood Daily - Poem of the Week, second edition (fictional test fixture for L"
+    },
+    {
+      "check": "round sources are exactly [original, copy-no-credit-2]",
+      "pass": true,
+      "detail": [
+        "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt?run=overlap-5967011",
+        "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/copy-no-credit-2.txt"
+      ]
+    },
+    {
+      "check": "points conserved: balances + escrow + pool == minted",
+      "pass": true,
+      "detail": {
+        "minted": 51000,
+        "balances": 50300,
+        "escrow": 500,
+        "pool": 200
+      }
+    }
+  ],
+  "stats": {
+    "appeals": 4,
+    "balances": 50300,
+    "by_status": {
+      "APPEALED": 2,
+      "FINAL": 7,
+      "JUDGED": 1,
+      "OPEN": 3,
+      "REJECTED": 1,
+      "VOID": 1
+    },
+    "conserved": true,
+    "escrow": 500,
+    "minted": 51000,
+    "overturned": 0,
+    "pool": 200,
+    "registered": 14,
+    "reports": 15,
+    "users": 51,
+    "works": 19
+  },
+  "finishedAt": "2026-10-21T01:42:36.257Z",
+  "all_finalized": true,
+  "all_checks_pass": true
+}

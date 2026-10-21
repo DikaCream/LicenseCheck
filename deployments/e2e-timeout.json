@@ -1,0 +1,178 @@
+{
+  "scenario": "timeout",
+  "network": "studionet",
+  "chainId": 61999,
+  "contract": "0x9e2885d91a1F9A426ceEd1580863840395CC109c",
+  "startedAt": "2026-10-21T01:26:10.996Z",
+  "actors": {
+    "A_creator": "0x5a3b6d64b8e87C5b27F456FABe622CdaEC4AaA52",
+    "B_reporter": "0x4a3fA4b2EC6fE80beeDdDD27F2f4E1c00e818ff3",
+    "C_accused": "0xAeFBc9d58080BC8C6F5e116A0B42379FAF1535FE"
+  },
+  "steps": [
+    {
+      "step": "claim_points (A_creator)",
+      "actor": "A_creator",
+      "method": "claim_points",
+      "tx": "0x15a2eb1742f1129caa8fc4f8abe3da61f6a2e397e8bcb353911c3334098911cc",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x15a2eb1742f1129caa8fc4f8abe3da61f6a2e397e8bcb353911c3334098911cc",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 125,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (B_reporter)",
+      "actor": "B_reporter",
+      "method": "claim_points",
+      "tx": "0x497ce58268bbf309776c2bcf180d34e898051386721f039495cbf54e05361207",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x497ce58268bbf309776c2bcf180d34e898051386721f039495cbf54e05361207",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 54,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (C_accused)",
+      "actor": "C_accused",
+      "method": "claim_points",
+      "tx": "0x70e01297e9ac3fa7bf797536a8205a11ae44f30b097cc06858d22d5050cdd10e",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x70e01297e9ac3fa7bf797536a8205a11ae44f30b097cc06858d22d5050cdd10e",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 257,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "register_work (timeout-5971029)",
+      "actor": "A_creator",
+      "method": "register_work",
+      "tx": "0x86dae6d73b09f3d9fc80ebc05d29ecf02b125aeb96352a759b7ad1901fd96147",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x86dae6d73b09f3d9fc80ebc05d29ecf02b125aeb96352a759b7ad1901fd96147",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 12,
+      "seconds": 50,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "file_report ATTRIBUTION copy-no-credit.txt",
+      "actor": "B_reporter",
+      "method": "file_report",
+      "tx": "0x459240301a4fa2a3500aabacfeee0f196d63f5aec7cfdb8388f4cd619d98acea",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x459240301a4fa2a3500aabacfeee0f196d63f5aec7cfdb8388f4cd619d98acea",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 11,
+      "seconds": 149,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "judge after its deadline reverts",
+      "actor": "A_creator",
+      "method": "judge",
+      "tx": "0x38c96a3f9081a4f4e0ffa657b0a2c1a94ba671b70672030319fa12e1d5c05321",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x38c96a3f9081a4f4e0ffa657b0a2c1a94ba671b70672030319fa12e1d5c05321",
+      "status": "ACCEPTED",
+      "execution": "ERROR",
+      "ok": true,
+      "expected": "revert",
+      "returned_id": null,
+      "seconds": 75,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "expire (judging deadline passed)",
+      "actor": "C_accused",
+      "method": "expire",
+      "tx": "0x5d58f6c885bc607339912711642e3c36759b282d60e3eb4de9e352c7526f6cfb",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x5d58f6c885bc607339912711642e3c36759b282d60e3eb4de9e352c7526f6cfb",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 11,
+      "seconds": 154,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "expire again reverts (nothing to expire)",
+      "actor": "C_accused",
+      "method": "expire",
+      "tx": "0x340cd16e7baa4a8a7eb5bb0d6a89e8e73dbfe836377bc87e4f071a859603c1cf",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x340cd16e7baa4a8a7eb5bb0d6a89e8e73dbfe836377bc87e4f071a859603c1cf",
+      "status": "ACCEPTED",
+      "execution": "ERROR",
+      "ok": true,
+      "expected": "revert",
+      "returned_id": null,
+      "seconds": 30,
+      "final_status": "FINALIZED"
+    }
+  ],
+  "checks": [
+    {
+      "check": "work 12 registered from the tx's own return id (attempt 1)",
+      "pass": true,
+      "detail": {
+        "status": "REGISTERED",
+        "reason": ""
+      }
+    },
+    {
+      "check": "report VOID with JUDGE_TIMEOUT and bond refunded",
+      "pass": true,
+      "detail": {
+        "status": "VOID",
+        "void": "JUDGE_TIMEOUT"
+      }
+    },
+    {
+      "check": "points conserved: balances + escrow + pool == minted",
+      "pass": true,
+      "detail": {
+        "minted": 49000,
+        "balances": 48225,
+        "escrow": 650,
+        "pool": 125
+      }
+    }
+  ],
+  "stats": {
+    "appeals": 4,
+    "balances": 48225,
+    "by_status": {
+      "APPEALED": 3,
+      "FINAL": 6,
+      "JUDGED": 0,
+      "OPEN": 4,
+      "REJECTED": 1,
+      "VOID": 1
+    },
+    "conserved": true,
+    "escrow": 650,
+    "minted": 49000,
+    "overturned": 0,
+    "pool": 125,
+    "registered": 14,
+    "reports": 15,
+    "users": 49,
+    "works": 19
+  },
+  "finishedAt": "2026-10-21T01:42:00.751Z",
+  "all_finalized": true,
+  "all_checks_pass": true
+}

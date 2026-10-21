@@ -1,0 +1,195 @@
+{
+  "scenario": "changed-judge",
+  "network": "studionet",
+  "chainId": 61999,
+  "contract": "0x9e2885d91a1F9A426ceEd1580863840395CC109c",
+  "startedAt": "2026-10-21T01:37:04.292Z",
+  "actors": {
+    "A_creator": "0xAEc22A41a86C08701E726Be23b796Ce50c0a08a8",
+    "B_reporter": "0x36897478f372c0f49030F52dc29f7BAc905015Bd",
+    "C_accused": "0x8A18844f23526C2f2b62b38c925348F0815824b4"
+  },
+  "steps": [
+    {
+      "step": "claim_points (A_creator)",
+      "actor": "A_creator",
+      "method": "claim_points",
+      "tx": "0x6e5d7d9e44a2892c9fe00d5b50c99f9589d868d278be0a7f1c39ce79cd912840",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x6e5d7d9e44a2892c9fe00d5b50c99f9589d868d278be0a7f1c39ce79cd912840",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 189,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (B_reporter)",
+      "actor": "B_reporter",
+      "method": "claim_points",
+      "tx": "0x4314615066dc51008a4377571de585cf2a57fcfef489c55f02bee2c7c50e5c5c",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x4314615066dc51008a4377571de585cf2a57fcfef489c55f02bee2c7c50e5c5c",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 38,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (C_accused)",
+      "actor": "C_accused",
+      "method": "claim_points",
+      "tx": "0x86daaab9fd70b3eaef3328c2313a4b394a0370597b41ad035874e265e2cbf4bf",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x86daaab9fd70b3eaef3328c2313a4b394a0370597b41ad035874e265e2cbf4bf",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 34,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "judge after the page swap",
+      "actor": "A_creator",
+      "method": "judge",
+      "tx": "0xf771659ec61858a7f046185cc7b1234d10856f1f559bd350c9e75fe9c3797d0a",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xf771659ec61858a7f046185cc7b1234d10856f1f559bd350c9e75fe9c3797d0a",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 6,
+      "seconds": 58,
+      "final_status": "FINALIZED"
+    }
+  ],
+  "checks": [
+    {
+      "check": "live page now differs (version B pushed after filing)",
+      "pass": true,
+      "detail": "Harbor Notes blog (fictional test fixture for LicenseCheck, version B)\n\nThe harbor lights "
+    },
+    {
+      "check": "page change detected by consensus and judged from the stored snapshot",
+      "pass": true,
+      "detail": {
+        "changed": [
+          "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/swap/page.txt"
+        ],
+        "verdict": "VIOLATION"
+      }
+    },
+    {
+      "check": "verdict reflects the filing-time version (swap did not whitewash it)",
+      "pass": true,
+      "detail": {
+        "verdict": "VIOLATION",
+        "findings": [
+          {
+            "fact": "The license term requires crediting the creator Mira Okafor.",
+            "quote": "You may share and adapt this poem for non-commercial purposes if you credit Mira Okafor and link to this page.",
+            "source": 0,
+            "supports": "NEUTRAL",
+            "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt?run=changed-file-5417380"
+          },
+          {
+            "fact": "The reported page credits 'the Harbor Notes team', not Mira Okafor.",
+            "quote": "Written by the Harbor Notes team.",
+            "source": 1,
+            "supports": "VIOLATION",
+            "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/swap/page.txt"
+          },
+          {
+            "fact": "The reported page reproduces the first stanza of the poem from source 0.",
+            "quote": "The harbor lights are folding into rain, the cranes stand still like herons made of iron, and every ferry carries home a name the tide forgot to write upon the shoreline.",
+            "source": 1,
+            "supports": "NEUTRAL",
+            "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/swap/page.txt"
+          },
+          {
+            "fact": "The creator of the original work is Mira Okafor.",
+            "quote": "HARBOR LIGHTS\nA poem by Mira Okafor",
+            "source": 0,
+            "supports": "NEUTRAL",
+            "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt?run=changed-file-5417380"
+          }
+        ]
+      }
+    },
+    {
+      "check": "points conserved: balances + escrow + pool == minted",
+      "pass": true,
+      "detail": {
+        "minted": 51000,
+        "balances": 50300,
+        "escrow": 500,
+        "pool": 200
+      }
+    }
+  ],
+  "verdicts": [
+    {
+      "report": 6,
+      "verdict": "VIOLATION",
+      "findings": [
+        {
+          "fact": "The license term requires crediting the creator Mira Okafor.",
+          "quote": "You may share and adapt this poem for non-commercial purposes if you credit Mira Okafor and link to this page.",
+          "source": 0,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt?run=changed-file-5417380"
+        },
+        {
+          "fact": "The reported page credits 'the Harbor Notes team', not Mira Okafor.",
+          "quote": "Written by the Harbor Notes team.",
+          "source": 1,
+          "supports": "VIOLATION",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/swap/page.txt"
+        },
+        {
+          "fact": "The reported page reproduces the first stanza of the poem from source 0.",
+          "quote": "The harbor lights are folding into rain, the cranes stand still like herons made of iron, and every ferry carries home a name the tide forgot to write upon the shoreline.",
+          "source": 1,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/swap/page.txt"
+        },
+        {
+          "fact": "The creator of the original work is Mira Okafor.",
+          "quote": "HARBOR LIGHTS\nA poem by Mira Okafor",
+          "source": 0,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt?run=changed-file-5417380"
+        }
+      ],
+      "reasoning": "The reported page reproduces the licensed work. The license term requires crediting the creator Mira Okafor, but the page credits 'the Harbor Notes team' instead."
+    }
+  ],
+  "stats": {
+    "appeals": 4,
+    "balances": 50300,
+    "by_status": {
+      "APPEALED": 2,
+      "FINAL": 7,
+      "JUDGED": 2,
+      "OPEN": 2,
+      "REJECTED": 1,
+      "VOID": 1
+    },
+    "conserved": true,
+    "escrow": 500,
+    "minted": 51000,
+    "overturned": 0,
+    "pool": 200,
+    "registered": 15,
+    "reports": 15,
+    "users": 51,
+    "works": 20
+  },
+  "finishedAt": "2026-10-21T01:43:17.890Z",
+  "all_finalized": true,
+  "all_checks_pass": true
+}
