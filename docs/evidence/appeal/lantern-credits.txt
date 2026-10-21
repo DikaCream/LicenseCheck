@@ -1,0 +1,5 @@
+Lantern Zine, issue 12 - credits page (fictional test fixture for LicenseCheck)
+
+Text credits for issue 12:
+- "Harbor Lights" (opening lines on the issue page) is a poem by Mira Okafor, reproduced under CC BY-NC 4.0. Original: https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt
+- Cover photo by the zine team.
