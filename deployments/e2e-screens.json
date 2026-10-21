@@ -1,0 +1,186 @@
+{
+  "scenario": "screens",
+  "network": "studionet",
+  "chainId": 61999,
+  "contract": "0x9e2885d91a1F9A426ceEd1580863840395CC109c",
+  "startedAt": "2026-10-21T01:16:39.387Z",
+  "actors": {
+    "A_creator": "0xD468fc5B37FeD141653E12A38152ef4de3F2c6F4",
+    "B_reporter": "0x3Dc5C99555aA9fe65CA4a71cA3549178335e00aF",
+    "C_accused": "0xA02C4747281A6c7795D25335321E5E210225A05e"
+  },
+  "steps": [
+    {
+      "step": "claim_points (A_creator)",
+      "actor": "A_creator",
+      "method": "claim_points",
+      "tx": "0x2bdea55e07401b26ac39fce77b49f0ce60a975e02db74eb78ede4375c4fac596",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x2bdea55e07401b26ac39fce77b49f0ce60a975e02db74eb78ede4375c4fac596",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 17,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (B_reporter)",
+      "actor": "B_reporter",
+      "method": "claim_points",
+      "tx": "0x9a2ac9dbd9620e78d428264155d6f8c730041ea4cab576cb45ed0feb21a4d57f",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x9a2ac9dbd9620e78d428264155d6f8c730041ea4cab576cb45ed0feb21a4d57f",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 29,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (C_accused)",
+      "actor": "C_accused",
+      "method": "claim_points",
+      "tx": "0x2329405641527c6f590bc7ac32f667994d00b8602cdb3a09f2e1f17b44b6a6f5",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x2329405641527c6f590bc7ac32f667994d00b8602cdb3a09f2e1f17b44b6a6f5",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 42,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "register_work (screens-5399427)",
+      "actor": "A_creator",
+      "method": "register_work",
+      "tx": "0x3a26e6527c0f5680027de553b459995118164cadc7513ff2f5569810d8d9736c",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x3a26e6527c0f5680027de553b459995118164cadc7513ff2f5569810d8d9736c",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 1,
+      "seconds": 46,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "register_work (screens-5399427-vague)",
+      "actor": "A_creator",
+      "method": "register_work",
+      "tx": "0x561be1f8f3f17d607ef1ad5f83400a38ffef461e07b371e45d787b644c8cbe9c",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x561be1f8f3f17d607ef1ad5f83400a38ffef461e07b371e45d787b644c8cbe9c",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 8,
+      "seconds": 120,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "file_report ATTRIBUTION copy-no-credit.txt",
+      "actor": "B_reporter",
+      "method": "file_report",
+      "tx": "0x8315d4846b20927fa61c3edea0be0d08a44ebec532896392b45c2542528a1e08",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x8315d4846b20927fa61c3edea0be0d08a44ebec532896392b45c2542528a1e08",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 7,
+      "seconds": 207,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "file_report on a term outside the license reverts",
+      "actor": "B_reporter",
+      "method": "file_report",
+      "tx": "0xb5f9293d47f90f8fc149aab5b0aa122f3fb11400cc394cb3bbe96a48213016d5",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xb5f9293d47f90f8fc149aab5b0aa122f3fb11400cc394cb3bbe96a48213016d5",
+      "status": "ACCEPTED",
+      "execution": "ERROR",
+      "ok": true,
+      "expected": "revert",
+      "returned_id": null,
+      "seconds": 204,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "register the same original URL again (fragment variant) reverts",
+      "actor": "A_creator",
+      "method": "register_work",
+      "tx": "0xe9cec2463a5109cb253c62e6e3dd1bdf10b53aa30b775694d4f157f5fa071ba9",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xe9cec2463a5109cb253c62e6e3dd1bdf10b53aa30b775694d4f157f5fa071ba9",
+      "status": "ACCEPTED",
+      "execution": "ERROR",
+      "ok": true,
+      "expected": "revert",
+      "returned_id": null,
+      "seconds": 50,
+      "final_status": "FINALIZED"
+    }
+  ],
+  "checks": [
+    {
+      "check": "work 1 registered from the tx's own return id (attempt 1)",
+      "pass": true,
+      "detail": {
+        "status": "REGISTERED",
+        "reason": ""
+      }
+    },
+    {
+      "check": "AI screen rejects a vague registration (no stake, not reportable)",
+      "pass": true,
+      "detail": {
+        "status": "REJECTED",
+        "reason": "The title 'Stuff' is vague and does not match the work 'Harbor Lights' found on the original page, and the custom clause ('use it nicely and respect the vibes') is vague and unenforceable."
+      }
+    },
+    {
+      "check": "AI screen rejects a vague report without taking the bond",
+      "pass": true,
+      "detail": {
+        "status": "REJECTED",
+        "reason": "The report claim is vague and does not concretely state how the attribution term was violated."
+      }
+    },
+    {
+      "check": "points conserved: balances + escrow + pool == minted",
+      "pass": true,
+      "detail": {
+        "minted": 30000,
+        "balances": 29575,
+        "escrow": 350,
+        "pool": 75
+      }
+    }
+  ],
+  "stats": {
+    "appeals": 2,
+    "balances": 29575,
+    "by_status": {
+      "APPEALED": 2,
+      "FINAL": 4,
+      "JUDGED": 0,
+      "OPEN": 1,
+      "REJECTED": 1,
+      "VOID": 0
+    },
+    "conserved": true,
+    "escrow": 350,
+    "minted": 30000,
+    "overturned": 0,
+    "pool": 75,
+    "registered": 8,
+    "reports": 8,
+    "users": 30,
+    "works": 9
+  },
+  "finishedAt": "2026-10-21T01:29:16.879Z",
+  "all_finalized": true,
+  "all_checks_pass": true
+}

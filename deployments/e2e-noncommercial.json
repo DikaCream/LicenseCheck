@@ -1,0 +1,294 @@
+{
+  "scenario": "noncommercial",
+  "network": "studionet",
+  "chainId": 61999,
+  "contract": "0x9e2885d91a1F9A426ceEd1580863840395CC109c",
+  "startedAt": "2026-10-21T01:16:45.444Z",
+  "actors": {
+    "A_creator": "0xa1aAD0BEC03c42BCcD0C431D89d52B440c0cc012",
+    "B_reporter": "0x7fC1d6F22fD317815bA523F5A729182DDD74b9E1",
+    "C_accused": "0xb845db1382e90A93ec303F0A5441c92594026b8c"
+  },
+  "steps": [
+    {
+      "step": "claim_points (A_creator)",
+      "actor": "A_creator",
+      "method": "claim_points",
+      "tx": "0x5ad4f6a8f4f9870088812a824b84ddb09f047a21b983d5ab2d18bec0f43d013d",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x5ad4f6a8f4f9870088812a824b84ddb09f047a21b983d5ab2d18bec0f43d013d",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 21,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (B_reporter)",
+      "actor": "B_reporter",
+      "method": "claim_points",
+      "tx": "0xfb7c84f65b25de2981aeeb666d57a6c13ecbbd3c8981833e879526821b8f3b5d",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xfb7c84f65b25de2981aeeb666d57a6c13ecbbd3c8981833e879526821b8f3b5d",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 38,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (C_accused)",
+      "actor": "C_accused",
+      "method": "claim_points",
+      "tx": "0xef45293f998f48a8f190d5038b3d30b745e51e15274a5758190b0026f2b1a917",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xef45293f998f48a8f190d5038b3d30b745e51e15274a5758190b0026f2b1a917",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 33,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "register_work (noncommercial-5405472)",
+      "actor": "A_creator",
+      "method": "register_work",
+      "tx": "0x0f963dcec59fc492272fdd4c6a7ce3dce990cd48ceb0e157308d77a0404cc595",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x0f963dcec59fc492272fdd4c6a7ce3dce990cd48ceb0e157308d77a0404cc595",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 3,
+      "seconds": 70,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "file_report NONCOMMERCIAL poster-shop.txt",
+      "actor": "B_reporter",
+      "method": "file_report",
+      "tx": "0xa3978c9ffea6a9a1caadfb9a41a25567e5f7d897e2b112feb7ae943fefff35ef",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xa3978c9ffea6a9a1caadfb9a41a25567e5f7d897e2b112feb7ae943fefff35ef",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 2,
+      "seconds": 145,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "judge (attempt 1)",
+      "actor": "A_creator",
+      "method": "judge",
+      "tx": "0xa15e7a89cf57ac46f843826bd6a06c1e4aca5d57fdb14bc024aab677b3693d26",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xa15e7a89cf57ac46f843826bd6a06c1e4aca5d57fdb14bc024aab677b3693d26",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 2,
+      "seconds": 228,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "finalize",
+      "actor": "A_creator",
+      "method": "finalize",
+      "tx": "0x250862041d8b8e968eb0d9f2866bbcc8605b77e7ed07416ecd5b06d20a98b2f4",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x250862041d8b8e968eb0d9f2866bbcc8605b77e7ed07416ecd5b06d20a98b2f4",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 2,
+      "seconds": 125,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "re-report of a URL with a final VIOLATION precedent reverts",
+      "actor": "C_accused",
+      "method": "file_report",
+      "tx": "0xc8103e83efc5c2aa6d3c4d8e261107bf595e437c7a458fc36fab46f300b89913",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xc8103e83efc5c2aa6d3c4d8e261107bf595e437c7a458fc36fab46f300b89913",
+      "status": "ACCEPTED",
+      "execution": "ERROR",
+      "ok": true,
+      "expected": "revert",
+      "returned_id": null,
+      "seconds": 46,
+      "final_status": "FINALIZED"
+    }
+  ],
+  "checks": [
+    {
+      "check": "work 3 registered from the tx's own return id (attempt 1)",
+      "pass": true,
+      "detail": {
+        "status": "REGISTERED",
+        "reason": ""
+      }
+    },
+    {
+      "check": "report 2 filed (attempt 1)",
+      "pass": true,
+      "detail": {
+        "status": "OPEN",
+        "reason": ""
+      }
+    },
+    {
+      "check": "expected verdict VIOLATION",
+      "pass": true,
+      "detail": {
+        "verdict": "VIOLATION"
+      }
+    },
+    {
+      "check": "round stored structured findings (source index + verbatim quote)",
+      "pass": true,
+      "detail": [
+        {
+          "fact": "The reported page sells a physical poster bearing the poem's first stanza for $29, constituting a commercial sale.",
+          "quote": "Product: \"Harbor Lights\" art poster, 50 x 70 cm. Price: 29 US dollars. Add to cart.",
+          "source": 1,
+          "supports": "VIOLATION",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/poster-shop.txt"
+        },
+        {
+          "fact": "The reported page reproduces the first stanza of the original poem verbatim on the product being sold.",
+          "quote": "The harbor lights are folding into rain, the cranes stand still like herons made of iron, and every ferry carries home a name the tide forgot to write upon the shoreline.",
+          "source": 1,
+          "supports": "VIOLATION",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/poster-shop.txt"
+        },
+        {
+          "fact": "The original work is licensed under CC BY-NC 4.0, which prohibits commercial use.",
+          "quote": "License: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0).",
+          "source": 0,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt?run=noncommercial-5405472"
+        },
+        {
+          "fact": "The license explicitly restricts use to non-commercial purposes only.",
+          "quote": "You may share and adapt this poem for non-commercial purposes if you credit Mira Okafor and link to this page.",
+          "source": 0,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt?run=noncommercial-5405472"
+        }
+      ]
+    },
+    {
+      "check": "snapshots of original + reported page stored with sha256 and full text",
+      "pass": true,
+      "detail": [
+        [
+          "ORIGINAL WORK",
+          "961d61344df9",
+          593,
+          false
+        ],
+        [
+          "REPORTED PAGE",
+          "0d52ac1473b1",
+          443,
+          false
+        ]
+      ]
+    },
+    {
+      "check": "report FINAL and bond settled per verdict",
+      "pass": true,
+      "detail": {
+        "verdict": "VIOLATION",
+        "delta": 25,
+        "reward": 25
+      }
+    },
+    {
+      "check": "outcome stored in the work's precedent registry",
+      "pass": true,
+      "detail": {
+        "violations": 1,
+        "compliant": 0,
+        "inconclusive": 0
+      }
+    },
+    {
+      "check": "points conserved: balances + escrow + pool == minted",
+      "pass": true,
+      "detail": {
+        "minted": 31000,
+        "balances": 30575,
+        "escrow": 350,
+        "pool": 75
+      }
+    }
+  ],
+  "verdicts": [
+    {
+      "report": 2,
+      "verdict": "VIOLATION",
+      "term_answer": "YES",
+      "reuses_work": "YES",
+      "findings": [
+        {
+          "fact": "The reported page sells a physical poster bearing the poem's first stanza for $29, constituting a commercial sale.",
+          "quote": "Product: \"Harbor Lights\" art poster, 50 x 70 cm. Price: 29 US dollars. Add to cart.",
+          "source": 1,
+          "supports": "VIOLATION",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/poster-shop.txt"
+        },
+        {
+          "fact": "The reported page reproduces the first stanza of the original poem verbatim on the product being sold.",
+          "quote": "The harbor lights are folding into rain, the cranes stand still like herons made of iron, and every ferry carries home a name the tide forgot to write upon the shoreline.",
+          "source": 1,
+          "supports": "VIOLATION",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/poster-shop.txt"
+        },
+        {
+          "fact": "The original work is licensed under CC BY-NC 4.0, which prohibits commercial use.",
+          "quote": "License: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0).",
+          "source": 0,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt?run=noncommercial-5405472"
+        },
+        {
+          "fact": "The license explicitly restricts use to non-commercial purposes only.",
+          "quote": "You may share and adapt this poem for non-commercial purposes if you credit Mira Okafor and link to this page.",
+          "source": 0,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt?run=noncommercial-5405472"
+        }
+      ],
+      "reasoning": "The reported page reproduces the first stanza of 'Harbor Lights' verbatim on a poster sold for $29, which is a direct commercial sale of the work. Selling a product that incorporates the poem constitutes commercial use, which is prohibited under the CC BY-NC 4.0 license."
+    }
+  ],
+  "stats": {
+    "appeals": 2,
+    "balances": 30575,
+    "by_status": {
+      "APPEALED": 2,
+      "FINAL": 4,
+      "JUDGED": 0,
+      "OPEN": 1,
+      "REJECTED": 1,
+      "VOID": 0
+    },
+    "conserved": true,
+    "escrow": 350,
+    "minted": 31000,
+    "overturned": 0,
+    "pool": 75,
+    "registered": 8,
+    "reports": 8,
+    "users": 31,
+    "works": 9
+  },
+  "finishedAt": "2026-10-21T01:30:23.346Z",
+  "all_finalized": true,
+  "all_checks_pass": true
+}

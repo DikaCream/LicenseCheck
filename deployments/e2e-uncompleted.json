@@ -1,0 +1,247 @@
+{
+  "scenario": "uncompleted",
+  "network": "studionet",
+  "chainId": 61999,
+  "contract": "0x9e2885d91a1F9A426ceEd1580863840395CC109c",
+  "startedAt": "2026-10-21T01:26:03.010Z",
+  "actors": {
+    "A_creator": "0x6DFdc91A8e59EBE9e4dbEf7FF6E1a73Fc574d475",
+    "B_reporter": "0x5746f9D10592d27F4231c9c173dbAB3280E30b0E",
+    "C_accused": "0x18D827c35BFF14b82ef0740f76657B302983E201"
+  },
+  "steps": [
+    {
+      "step": "claim_points (A_creator)",
+      "actor": "A_creator",
+      "method": "claim_points",
+      "tx": "0x0bf169f48ca11306abbd7073d08cf74c4ba306c08023546bfb6c8a4d330960c2",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x0bf169f48ca11306abbd7073d08cf74c4ba306c08023546bfb6c8a4d330960c2",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 121,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (B_reporter)",
+      "actor": "B_reporter",
+      "method": "claim_points",
+      "tx": "0x3fe6a8be46f95b1d83929541dfb693121544530df719e44653b2f1f4167a0a41",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x3fe6a8be46f95b1d83929541dfb693121544530df719e44653b2f1f4167a0a41",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 50,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (C_accused)",
+      "actor": "C_accused",
+      "method": "claim_points",
+      "tx": "0xcf3a5472ec5c39746951e43f9aa6f8bd729d0ba4420ad030c8d85bd5ad291cb8",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xcf3a5472ec5c39746951e43f9aa6f8bd729d0ba4420ad030c8d85bd5ad291cb8",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 261,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "register_work (uncompleted-5963046)",
+      "actor": "A_creator",
+      "method": "register_work",
+      "tx": "0x5a22240b3c7216ad41f987ce8e346be59474b641c759d720ab7ee5c244d63314",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x5a22240b3c7216ad41f987ce8e346be59474b641c759d720ab7ee5c244d63314",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 9,
+      "seconds": 25,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "file_report ATTRIBUTION copy-no-credit.txt",
+      "actor": "B_reporter",
+      "method": "file_report",
+      "tx": "0xe953b175a68b4b4cca71255d23a788375be5bf756fa54aef9b00926cc0090640",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xe953b175a68b4b4cca71255d23a788375be5bf756fa54aef9b00926cc0090640",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 8,
+      "seconds": 71,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "judge (attempt 1)",
+      "actor": "A_creator",
+      "method": "judge",
+      "tx": "0x65e6fb1e6d6082a75d43d7506c7740755948f291cb6feebe5af7d8695aa2acf2",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x65e6fb1e6d6082a75d43d7506c7740755948f291cb6feebe5af7d8695aa2acf2",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 8,
+      "seconds": 146,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "appeal by C_accused (first verdict VIOLATION)",
+      "actor": "C_accused",
+      "method": "appeal",
+      "tx": "0x8d3750410a2c791e5888c5e955d5f94b8930630e922023a514bd34c48547f9eb",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x8d3750410a2c791e5888c5e955d5f94b8930630e922023a514bd34c48547f9eb",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 8,
+      "seconds": 170,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "rule_appeal after the deadline reverts",
+      "actor": "A_creator",
+      "method": "rule_appeal",
+      "tx": "0xba04cb0a4bb8606b91a6571a0e7f701da9ec4f66071869059efb99e1dc2dcb09",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xba04cb0a4bb8606b91a6571a0e7f701da9ec4f66071869059efb99e1dc2dcb09",
+      "status": "ACCEPTED",
+      "execution": "ERROR",
+      "ok": true,
+      "expected": "revert",
+      "returned_id": null,
+      "seconds": 38,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "expire (anyone applies the finality rules)",
+      "actor": "A_creator",
+      "method": "expire",
+      "tx": "0xce7b3c4d5cedcfb53cfe0ef90e7db93c732b123a210a62afbfb52d0b6209355c",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xce7b3c4d5cedcfb53cfe0ef90e7db93c732b123a210a62afbfb52d0b6209355c",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 8,
+      "seconds": 29,
+      "final_status": "FINALIZED"
+    }
+  ],
+  "checks": [
+    {
+      "check": "work 9 registered from the tx's own return id (attempt 1)",
+      "pass": true,
+      "detail": {
+        "status": "REGISTERED",
+        "reason": ""
+      }
+    },
+    {
+      "check": "report 8 filed (attempt 1)",
+      "pass": true,
+      "detail": {
+        "status": "OPEN",
+        "reason": ""
+      }
+    },
+    {
+      "check": "first verdict stands and report is FINAL (no escape)",
+      "pass": true,
+      "detail": {
+        "first": "VIOLATION",
+        "verdict": "VIOLATION",
+        "appeal": "UNRESOLVED"
+      }
+    },
+    {
+      "check": "appeal bond FORFEITED",
+      "pass": true,
+      "detail": {
+        "bond": "FORFEITED"
+      }
+    },
+    {
+      "check": "points conserved: balances + escrow + pool == minted",
+      "pass": true,
+      "detail": {
+        "minted": 51000,
+        "balances": 50300,
+        "escrow": 500,
+        "pool": 200
+      }
+    }
+  ],
+  "verdicts": [
+    {
+      "report": 8,
+      "verdict": "VIOLATION",
+      "term_answer": "NO",
+      "reuses_work": "YES",
+      "findings": [
+        {
+          "fact": "The original license requires crediting Mira Okafor or linking to the original work for any reuse.",
+          "quote": "You may share and adapt this poem for non-commercial purposes if you credit Mira Okafor and link to this page.",
+          "source": 0,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt?run=uncompleted-5963046"
+        },
+        {
+          "fact": "The reported page reproduces the full first stanza of Harbor Lights without naming Mira Okafor or providing a link to the original work.",
+          "quote": "This week we share a poem that we love:",
+          "source": 1,
+          "supports": "VIOLATION",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/copy-no-credit.txt"
+        },
+        {
+          "fact": "The page credits only its own editors, not the original creator or a link to the source.",
+          "quote": "Posted by the Driftwood Daily editors. Subscribe for a new poem every week.",
+          "source": 1,
+          "supports": "VIOLATION",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/copy-no-credit.txt"
+        },
+        {
+          "fact": "The reproduced text in source 1 matches the original poem verbatim, confirming reuse.",
+          "quote": "The harbor lights are folding into rain, the cranes stand still like herons made of iron, and every ferry carries home a name the tide forgot to write upon the shoreline.",
+          "source": 0,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt?run=uncompleted-5963046"
+        }
+      ],
+      "reasoning": "The reported page reproduces the full first stanza of the poem verbatim, constituting reuse of the original work. It fails to credit Mira Okafor or link to the original, which is required by the CC-BY-NC attribution term, resulting in a violation."
+    }
+  ],
+  "stats": {
+    "appeals": 4,
+    "balances": 50300,
+    "by_status": {
+      "APPEALED": 2,
+      "FINAL": 7,
+      "JUDGED": 0,
+      "OPEN": 4,
+      "REJECTED": 1,
+      "VOID": 1
+    },
+    "conserved": true,
+    "escrow": 500,
+    "minted": 51000,
+    "overturned": 0,
+    "pool": 200,
+    "registered": 14,
+    "reports": 15,
+    "users": 51,
+    "works": 19
+  },
+  "finishedAt": "2026-10-21T01:42:14.332Z",
+  "all_finalized": true,
+  "all_checks_pass": true
+}

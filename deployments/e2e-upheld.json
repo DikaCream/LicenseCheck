@@ -1,0 +1,236 @@
+{
+  "scenario": "upheld",
+  "network": "studionet",
+  "chainId": 61999,
+  "contract": "0x9e2885d91a1F9A426ceEd1580863840395CC109c",
+  "startedAt": "2026-10-21T01:16:51.357Z",
+  "actors": {
+    "A_creator": "0xF931dB9d4FBD68bd18b816390Bec81e805a793CC",
+    "B_reporter": "0xac3F2F690C77779b84515025A33d8ebe1fCde65f",
+    "C_accused": "0x3b21d79bF0754955814b071715F01Aa44c35C19A"
+  },
+  "steps": [
+    {
+      "step": "claim_points (A_creator)",
+      "actor": "A_creator",
+      "method": "claim_points",
+      "tx": "0xc50edd2cc6f9d32abb6ed5693d13b18400c0792c8421502331d854a611e703e5",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xc50edd2cc6f9d32abb6ed5693d13b18400c0792c8421502331d854a611e703e5",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 21,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (B_reporter)",
+      "actor": "B_reporter",
+      "method": "claim_points",
+      "tx": "0x696ea71e7a17b613a10a9fa070567e567f126fd430e14465df70f4b0ca4660bd",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x696ea71e7a17b613a10a9fa070567e567f126fd430e14465df70f4b0ca4660bd",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 42,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "claim_points (C_accused)",
+      "actor": "C_accused",
+      "method": "claim_points",
+      "tx": "0x72d7491e45912eab631864ffbee3bee1fa0f9f441eae62d45b4ec40be18e944b",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x72d7491e45912eab631864ffbee3bee1fa0f9f441eae62d45b4ec40be18e944b",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": null,
+      "seconds": 29,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "register_work (upheld-5411385)",
+      "actor": "A_creator",
+      "method": "register_work",
+      "tx": "0xd0e928de2a2e12746ab2ff4b7ce74e7666ff77c8fed70dc4d5d7ead7e2bbf0c2",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xd0e928de2a2e12746ab2ff4b7ce74e7666ff77c8fed70dc4d5d7ead7e2bbf0c2",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 5,
+      "seconds": 95,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "file_report ATTRIBUTION copy-no-credit.txt",
+      "actor": "B_reporter",
+      "method": "file_report",
+      "tx": "0xb8369a6e4a2b3378cd7bd8708723a13741e58fc4f650e581dd179a27a6334a7d",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0xb8369a6e4a2b3378cd7bd8708723a13741e58fc4f650e581dd179a27a6334a7d",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 4,
+      "seconds": 178,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "judge (attempt 1)",
+      "actor": "A_creator",
+      "method": "judge",
+      "tx": "0x049ad2bac39cb018c351d18dda1106d7fecdd3de895567a633c45dfaec15b764",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x049ad2bac39cb018c351d18dda1106d7fecdd3de895567a633c45dfaec15b764",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 4,
+      "seconds": 271,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "appeal by C_accused (first verdict VIOLATION)",
+      "actor": "C_accused",
+      "method": "appeal",
+      "tx": "0x5a8571fb51ca54b1015a35338a55f90dc705f12c5fef614161b2f85d374cab0a",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x5a8571fb51ca54b1015a35338a55f90dc705f12c5fef614161b2f85d374cab0a",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 4,
+      "seconds": 51,
+      "final_status": "FINALIZED"
+    },
+    {
+      "step": "rule_appeal",
+      "actor": "A_creator",
+      "method": "rule_appeal",
+      "tx": "0x24b2aee639f74d18364213ce8b4df45b09e17f787900bd5bea30a06ca8565c20",
+      "explorer": "https://explorer-studio.genlayer.com/transactions/0x24b2aee639f74d18364213ce8b4df45b09e17f787900bd5bea30a06ca8565c20",
+      "status": "ACCEPTED",
+      "execution": "SUCCESS",
+      "ok": true,
+      "expected": "success",
+      "returned_id": 4,
+      "seconds": 104,
+      "final_status": "FINALIZED"
+    }
+  ],
+  "checks": [
+    {
+      "check": "work 5 registered from the tx's own return id (attempt 1)",
+      "pass": true,
+      "detail": {
+        "status": "REGISTERED",
+        "reason": ""
+      }
+    },
+    {
+      "check": "report 4 filed (attempt 1)",
+      "pass": true,
+      "detail": {
+        "status": "OPEN",
+        "reason": ""
+      }
+    },
+    {
+      "check": "appeal decided, report FINAL",
+      "pass": true,
+      "detail": {
+        "first": "VIOLATION",
+        "final": "VIOLATION",
+        "appeal": "UPHELD",
+        "bond": "FORFEITED"
+      }
+    },
+    {
+      "check": "expected scenario: appeal UPHELD, bond FORFEITED",
+      "pass": true,
+      "detail": {
+        "appeal": "UPHELD",
+        "bond": "FORFEITED"
+      }
+    },
+    {
+      "check": "both rounds recorded",
+      "pass": true,
+      "detail": [
+        "INITIAL:VIOLATION",
+        "APPEAL:VIOLATION"
+      ]
+    },
+    {
+      "check": "points conserved: balances + escrow + pool == minted",
+      "pass": true,
+      "detail": {
+        "minted": 37000,
+        "balances": 36650,
+        "escrow": 200,
+        "pool": 150
+      }
+    }
+  ],
+  "verdicts": [
+    {
+      "report": 4,
+      "verdict": "VIOLATION",
+      "term_answer": "NO",
+      "reuses_work": "YES",
+      "findings": [
+        {
+          "fact": "The original work identifies Mira Okafor as the author and requires credit.",
+          "quote": "A poem by Mira Okafor (fictional test fixture for LicenseCheck)",
+          "source": 0,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/original/harbor-lights.txt?run=upheld-5411385"
+        },
+        {
+          "fact": "The reported page reproduces the entire text of the original poem.",
+          "quote": "The harbor lights are folding into rain,",
+          "source": 1,
+          "supports": "NEUTRAL",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/copy-no-credit.txt"
+        },
+        {
+          "fact": "The reported page fails to mention Mira Okafor, the title 'Harbor Lights', or provide a link to the original.",
+          "quote": "Posted by the Driftwood Daily editors. Subscribe for a new poem every week.",
+          "source": 1,
+          "supports": "VIOLATION",
+          "url": "https://raw.githubusercontent.com/DikaCream/LicenseCheck/main/docs/evidence/reported/copy-no-credit.txt"
+        }
+      ],
+      "reasoning": "The reported page reproduces the original work in its entirety but omits the required author credit and title. Under the CC-BY-NC license, failure to provide attribution constitutes a violation of the license terms."
+    }
+  ],
+  "stats": {
+    "appeals": 2,
+    "balances": 36650,
+    "by_status": {
+      "APPEALED": 1,
+      "FINAL": 5,
+      "JUDGED": 0,
+      "OPEN": 1,
+      "REJECTED": 1,
+      "VOID": 0
+    },
+    "conserved": true,
+    "escrow": 200,
+    "minted": 37000,
+    "overturned": 0,
+    "pool": 150,
+    "registered": 8,
+    "reports": 8,
+    "users": 37,
+    "works": 9
+  },
+  "finishedAt": "2026-10-21T01:33:20.550Z",
+  "all_finalized": true,
+  "all_checks_pass": true
+}
